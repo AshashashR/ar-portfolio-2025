@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ash_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Ashley R. | Web Developer</title>
+</head>
+
+<body>
+    
+
+        <!-- PC NAVBAR -->
+    <header id="header">
+
+    
+        <nav class="nav_container_pc">
+            <img src="ash_logo.jpg" alt="Logo" class="logo">
+
+            <div class="links">
+                <ul>
+                    <li><a href="#home" class="home-hover">
+                            <p class="nav-text">top</p>
+                        </a></li>
+
+                    <li><a href="#about" class="about-hover">
+                            <p class="nav-text">about</p>
+                        </a></li>
+                    <li><a href="#portfolio" class="portfolio-hover">
+                            <p class="nav-text">portfolio</p>
+                        </a></li>
+                    <li><a href="#work" class="work-hover">
+                            <p class="nav-text">work</p>
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+        <!-- MOBILE NAVBAR -->
+        <nav class="nav_container" id="navbar">
+            <img src="ash_logo.jpg" alt="Logo" class="logo">
+
+            <div class="overlay">
+              <span class="hamburger" onclick="openNav()">≡</span>
+              <!-- overlay -->
+              <div>
+                <div class="overlaytext hide" id="toggle">
+                  <ul class="links-small">
+                    <li><a href="#home" class="link">top</a></li>
+                    <li><a href="#about" class="link">about</a></li>
+                    <li><a href="#portfolio" class="link">portfolio</a></li>
+                    <li><a href="#work" class="link">work</a></li>
+                    <!-- <li><a href="#contact" class="link">contact me</a></li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </nav>
+
+        <main id="main">
+
+        <section class="home" id="home">
+            <div class="home_container">
+                <div class="left">
+                    <div class="wrapper">
+                        <h1 class="home_title">
+                            hello
+                        </h1>
+                        <div class="hr_line"></div>
+
+                        <h3 class="home_subtitle">
+                            i'm a web developer<br>
+                            i'm a food lover<br>
+                            i'm a meme queen<br>
+                        </h3>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="img_container">
+                        <img src="./img/home_layer2.png" class="hero" alt="hero">
+                    </div>
+                </div>
+
+                <a href="#about" class="arrow">
+                    <img src="./icon img/down-arrow-svgrepo-com.svg" class="arrow_about" alt="arrow down" width="80">
+                </a>
+            </div>
+
+            <!-- MOBILE VERSION -->
+
+            <div class="home_container_mobile">
+
+                <div class="wrapper">
+                    <h1 class="home_title">
+                        hello
+                    </h1>
+                    <div class="hr_line"></div>
+
+                    <h3 class="home_subtitle">
+                        i'm a web developer<br>
+                        i'm a food lover<br>
+                        i'm a meme queen<br>
+                    </h3>
+                </div>
+
+
+                <div class="img_container">
+                    <img src="./img/home_layer2.png" class="hero" alt="hero">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about_container hidden">
+                <div class="left">
+                    <div class="wrapper">
+                        <h1 class="about_title">
+                            about me
+                        </h1>
+                        <div class="hr_line"></div>
+                        <h4 class="about_subtitle">
+                            From Paris, France. <br>
+                            Based in Fukuoka, Japan.
+                        </h4>
+                        <p class="about_text">
+                            My name is Ashley and I am a web developer.<br>
+                            I am currently working as a web developer
+                            in a Japanese company that owns several e-commerce shops.
+                            <br><br>
+                            During my seven years in Japan, I mostly worked in the sectors of
+                            customer service (sales representative) and translation.<br><br>
+                            I decided it was time for a career change in 2021,
+                            therefore I began studying web programming.
+                            I've always been creative and an excellent problem solver
+                            with high communication skills, and I believe it's one of the many qualities
+                            required to thrive in IT. I am always trying to think outside the box and
+                            I am still learning new things, especially in web development and I really enjoy this new career change !
+                        </p><br>
+                        <h3 class="about-details">WHAT I DO</h3>
+                        <br>
+                         <ul>
+                             <li>Specialized in front-end development (HTML, CSS and JavaScript)</li>
+                             <li>Building landing pages</li>
+                             <li>Building responsive websites</li>
+                             <li>Web application development</li>
+                             <li>I also have knowledge of back-end development with Python and Django</li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="img_container">
+                        <img src="./img/about-me-body.png" class="avatar" alt="about_avatar">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE VERSION -->
+
+            <div class="about_container_mobile hidden">
+                    <div class="wrapper">
+                        <h1 class="about_title">
+                            about me
+                        </h1>
+                        <div class="hr_line"></div>
+                        <h4 class="about_subtitle">
+                            From Paris, France. <br>
+                            Based in Fukuoka, Japan.
+                        </h4>
+                        <p class="about_text">
+                            My name is Ashley and I am a web developer.<br>
+                            I am currently working as a web developer
+                            in a Japanese company that owns several e-commerce shops.
+                            <br><br>
+                            During my seven years in Japan, I mostly worked in the sectors of
+                            customer service (sales representative) and translation.<br><br>
+                            I decided it was time for a career change in 2021,
+                            therefore I began studying web programming.
+                            I've always been creative and an excellent problem solver
+                            with high communication skills, and I believe it's one of the many qualities
+                            required to thrive in IT. I am always trying to think outside the box and
+                            I am still learning new things, especially in web development and I really enjoy this new career change !
+                        </p>
+                        <h3 class="about-details">WHAT I DO</h3>
+                        <br>
+                         <ul>
+                             <li>Specialized in front-end development (HTML, CSS and JavaScript)</li>
+                             <li>Building landing pages</li>
+                             <li>Building responsive websites</li>
+                             <li>Web application development</li>
+                             <li>I also have knowledge of back-end development with Python and Django</li>
+                         </ul>
+                    </div>
+                    <div class="img_container">
+                        <img src="./img/about-me-body.png" class="avatar" alt="about_avatar">
+                    </div>
+  
+            </div>
+
+        </section>
+
+        <section class="portfolio hidden" id="portfolio">
+            <div class="portfolio_container">
+                <h1 class="portfolio_title">
+                    portfolio
+                </h1>
+                <div class="hr_line"></div>
+                <div class="portfolio_grid">
+                    <div class="item">
+                        <a href="https://portfolio-ashley-new.herokuapp.com/" target="_blank">
+                            <img src="./work img/old_portfolio.png" alt="old portfolio app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://ash-twitter-clone.herokuapp.com/" target="_blank">
+                            <img src="./work img/twitter-clone-app.png" alt="twitter clone app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://tenpadayo.herokuapp.com/" target="_blank">
+                            <img src="./work img/tenpadayo-screenshot.png" alt="tenpa da yo app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://theflaggame.herokuapp.com/" target="_blank">
+                            <img src="./work img/flag-game.png" alt="the flag game app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://ash-github-user-search.herokuapp.com/" target="_blank">
+                            <img src="./work img/github-user-search-screenshot.png" alt="github-user-search app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://ashashashr.github.io/cute-calculator/" target="_blank">
+                            <img src="./work img/cute-calcuator-screenshot.png" alt="cute calculator app">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://ashashashr.github.io/base-apparel-coming-soon-master-challenge/" target="_blank">
+                            <img src="./work img/base-apparel-coming-soon-page.png"
+                                alt="base-apparel-coming-soon-page app">
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="https://ashashashr.github.io/sunnyside-agency-landing-page-main/" target="_blank">
+                            <img src="./work img/sunnyside-agency-landing-page.png" alt="sunnyside agency landing page">
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="https://ashashashr.github.io/avatar_select/" target="_blank">
+                            <img src="./work img/avatar-select-screenshot.png" alt="avatar">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="work hidden" id="work">
+            <div class="work_container">
+                <h1 class="work_title">
+                    work
+                </h1>
+                <div class="hr_line"></div>
+                <div class="work_grid">
+                    <div class="work_item">
+                        <a href="https://yuryo-kokusai.co.jp/" target="_blank">
+                            <img src="./work img/yr.png" alt="株式会社優良國際ホームページ">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/premium-interior/sale/marason/index.html" target="_blank">
+                            <img src="./work img/marason_sp_summer.jpg" alt="lff_sale_event">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/fall_winter.html" target="_blank">
+                            <img src="./work img/s010148mb-bn3-l.jpg" alt="aki fuyu tokushuu">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/filmfilmer/category/newitemcategory.html" target="_blank">
+                            <img src="./work img/3k01mac-13.png" alt="shinshouhin">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ss-sale-event.html" target="_blank">
+                            <img src="./work img/s3101mib-4b-2312_01.gif" alt="super sale">
+                        </a>
+                    </div> -->
+                    
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ranking.html" target="_blank">
+                            <img src="./work img/11c03aab-sl-2.gif" alt="nyugaku">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://demiu.jp/" target="_blank">
+                            <img src="./work img/demiu.png" alt="demiu">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000407" target="_blank">
+                            <img src="./work img/0000000407_d01_bnr.jpg" alt="ニュアンスカラー特集">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/gr241" target="_blank">
+                            <img src="./work img/0000000385_d01.jpg" alt="2022年の福袋">
+                        </a>
+                    </div> -->
+                    <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/27644_28317/" target="_blank">
+                            <img src="./work img/0000000102_01.jpg" alt="モレラートマニファッティ">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000408" target="_blank">
+                            <img src="./work img/0000000408_d01.jpg" alt="母の日ギフト特集">
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+
+        </section>
+        <!-- MOBILE VERSION -->
+        <section class="contact hidden" id="contact">
+            <div class="contact_container">
+                <h1 class="contact_title">
+                    contact me
+                </h1>
+                <div class="hr_line"></div>
+                <div class="wrapper">
+                    <!-- <a href="mailto:ashley.rakotoson@gmail.com">
+                        <img src="./icon img/icons8-mail.svg" alt="mail"></a> -->
+                    <a href="https://github.com/AshashashR" target="_blank"><img src="./icon img/icons8-github.svg" alt="github"></a>
+                    <!-- <a href="https://jp.linkedin.com/in/ashley-r-938758166/en" target="_blank"><img src="./icon img/icons8-linkedin.svg" alt="linkedin"></a> -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© Ashley R.</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
