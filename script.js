@@ -55,3 +55,37 @@ document.addEventListener("DOMContentLoaded", () => {
   
   hiddenElements.forEach(el => observer.observe(el));
 });
+
+//Modal window
+document.addEventListener("DOMContentLoaded", () => {
+  const projects = document.querySelectorAll(".work_item");
+  const modal = document.getElementById("modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const modalLink = document.getElementById("modal-link");
+  const closeModal = document.querySelector(".close");
+
+  projects.forEach(project => {
+      project.addEventListener("click", () => {
+          const title = project.getAttribute("data-title");
+          const description = project.getAttribute("data-description");
+          const link = project.getAttribute("data-link");
+
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+          modalLink.href = link;
+
+          modal.style.display = "flex";
+      });
+  });
+
+  closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+});

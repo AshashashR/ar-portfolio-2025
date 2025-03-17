@@ -34,11 +34,11 @@
                     <li><a href="#about" class="about-hover">
                             <p class="nav-text">about</p>
                         </a></li>
-                    <li><a href="#portfolio" class="portfolio-hover">
-                            <p class="nav-text">portfolio</p>
-                        </a></li>
-                    <li><a href="#work" class="work-hover">
+                        <li><a href="#work" class="work-hover">
                             <p class="nav-text">work</p>
+                        </a></li>
+                    <li><a href="#portfolio" class="portfolio-hover">
+                            <p class="nav-text">personal work</p>
                         </a></li>
                 </ul>
             </div>
@@ -59,8 +59,8 @@
                   <ul class="links-small">
                     <li><a href="#home" class="link">top</a></li>
                     <li><a href="#about" class="link">about</a></li>
-                    <li><a href="#portfolio" class="link">portfolio</a></li>
                     <li><a href="#work" class="link">work</a></li>
+                    <li><a href="#portfolio" class="link">personal work</a></li>
                     <!-- <li><a href="#contact" class="link">contact me</a></li> -->
                   </ul>
                 </div>
@@ -215,7 +215,89 @@
 
         </section>
 
-        <section class="portfolio hidden" id="portfolio">
+        <section class="work" id="work">
+            <div class="work_container">
+                <h1 class="work_title">
+                    work
+                </h1>
+                <div class="hr_line"></div>
+                <div class="work_grid">
+                    <div class="work_item" data-title="Project 1" data-description="株式会社優良國際ホームページ" data-link="https://yuryo-kokusai.co.jp/">
+                            <img src="./work img/yr.png" alt="株式会社優良國際ホームページ">
+                
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/premium-interior/sale/marason/index.html" target="_blank">
+                            <img src="./work img/mainyr.jpg" alt="lff_sale_event">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/fall_winter.html" target="_blank">
+                            <img src="./work img/akifuyuhobinavi2.jpg" alt="aki fuyu tokushuu">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/filmfilmer/category/newitemcategory.html" target="_blank">
+                            <img src="./work img/3c11mab-01.gif" alt="shinshouhin">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ss-sale-event.html" target="_blank">
+                            <img src="./work img/s3101mib-4b-2312_01.gif" alt="super sale">
+                        </a>
+                    </div> -->
+                    
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ranking.html" target="_blank">
+                            <img src="./work img/11c03aab-sl-2.gif" alt="nyugaku">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.rakuten.ne.jp/gold/mysticker/cart/cart.html" target="_blank">
+                            <img src="./work img/onamaecart.png" alt="namestickercart">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://demiu.jp/" target="_blank">
+                            <img src="./work img/demiu.png" alt="demiu">
+                        </a>
+                    </div>
+                    <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000407" target="_blank">
+                            <img src="./work img/0000000407_d01_bnr.jpg" alt="ニュアンスカラー特集">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/gr241" target="_blank">
+                            <img src="./work img/0000000385_d01.jpg" alt="2022年の福袋">
+                        </a>
+                    </div> -->
+                    <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/27644_28317/" target="_blank">
+                            <img src="./work img/0000000102_01.jpg" alt="モレラートマニファッティ">
+                        </a>
+                    </div>
+                    <!-- <div class="work_item">
+                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000408" target="_blank">
+                            <img src="./work img/0000000408_d01.jpg" alt="母の日ギフト特集">
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">Voir le projet</a>
+        </div>
+    </div>
+
+        <section class="portfolio" id="portfolio">
             <div class="portfolio_container">
                 <h1 class="portfolio_title">
                     portfolio
@@ -275,73 +357,7 @@
             </div>
         </section>
 
-        <section class="work hidden" id="work">
-            <div class="work_container">
-                <h1 class="work_title">
-                    work
-                </h1>
-                <div class="hr_line"></div>
-                <div class="work_grid">
-                    <div class="work_item">
-                        <a href="https://yuryo-kokusai.co.jp/" target="_blank">
-                            <img src="./work img/yr.png" alt="株式会社優良國際ホームページ">
-                        </a>
-                    </div>
-                    <div class="work_item">
-                        <a href="https://www.rakuten.ne.jp/gold/premium-interior/sale/marason/index.html" target="_blank">
-                            <img src="./work img/marason_sp_summer.jpg" alt="lff_sale_event">
-                        </a>
-                    </div>
-                    <div class="work_item">
-                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/fall_winter.html" target="_blank">
-                            <img src="./work img/s010148mb-bn3-l.jpg" alt="aki fuyu tokushuu">
-                        </a>
-                    </div>
-                    <div class="work_item">
-                        <a href="https://www.rakuten.ne.jp/gold/filmfilmer/category/newitemcategory.html" target="_blank">
-                            <img src="./work img/3k01mac-13.png" alt="shinshouhin">
-                        </a>
-                    </div>
-                    <!-- <div class="work_item">
-                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ss-sale-event.html" target="_blank">
-                            <img src="./work img/s3101mib-4b-2312_01.gif" alt="super sale">
-                        </a>
-                    </div> -->
-                    
-                    <div class="work_item">
-                        <a href="https://www.rakuten.ne.jp/gold/hobinavi/category/ranking.html" target="_blank">
-                            <img src="./work img/11c03aab-sl-2.gif" alt="nyugaku">
-                        </a>
-                    </div>
-                    <div class="work_item">
-                        <a href="https://demiu.jp/" target="_blank">
-                            <img src="./work img/demiu.png" alt="demiu">
-                        </a>
-                    </div>
-                    <div class="work_item">
-                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000407" target="_blank">
-                            <img src="./work img/0000000407_d01_bnr.jpg" alt="ニュアンスカラー特集">
-                        </a>
-                    </div>
-                    <!-- <div class="work_item">
-                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/gr241" target="_blank">
-                            <img src="./work img/0000000385_d01.jpg" alt="2022年の福袋">
-                        </a>
-                    </div> -->
-                    <div class="work_item">
-                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/27644_28317/" target="_blank">
-                            <img src="./work img/0000000102_01.jpg" alt="モレラートマニファッティ">
-                        </a>
-                    </div>
-                    <!-- <div class="work_item">
-                        <a href="https://www.mano-a-mano.jp/fs/manoamano/c/0000000408" target="_blank">
-                            <img src="./work img/0000000408_d01.jpg" alt="母の日ギフト特集">
-                        </a>
-                    </div> -->
-                </div>
-            </div>
-
-        </section>
+    
         <!-- MOBILE VERSION -->
         <section class="contact hidden" id="contact">
             <div class="contact_container">
