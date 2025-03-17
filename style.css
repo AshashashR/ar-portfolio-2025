@@ -417,7 +417,7 @@ h1 {
     transform: scale(1.5);
 }
 
-/* Modal */
+/* MODAL - Design amélioré */
 .modal {
     display: none;
     position: fixed;
@@ -425,44 +425,108 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .modal-content {
     background: white;
-    padding: 20px;
-    width: 400px;
-    border-radius: 8px;
-    text-align: center;
+    padding: 25px;
+    width: 600px;
+    height: 500px;
+    border-radius: 12px;
+    /* text-align: center; */
     position: relative;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Effet d’apparition */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Bouton de fermeture */
 .close {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
+    color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.close:hover {
-    color: red;
-}
 
+/* Lien du projet */
 #modal-link {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 10px 20px;
-    background: blue;
+    background: #007bff;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 }
 
 #modal-link:hover {
-    background: darkblue;
+    background: #0056b3;
+}
+
+#modal-title {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+#modal-title-link {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #000;
+}
+
+#modal-description {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+#modal-subtitle {
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 13px;
+}
+
+#modal-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: none; /* Caché par défaut, s'affiche quand une image est chargée */
 }
 
 /* PORTFOLIO SECTION */
