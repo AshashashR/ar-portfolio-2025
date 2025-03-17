@@ -490,13 +490,13 @@ h1 {
     background: #0056b3;
 }
 
-#modal-title {
+/* #modal-title {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-}
+} */
 
 #modal-title-link {
     font-size: 20px;
@@ -505,6 +505,7 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     color: #000;
+    display: inline-block;
 }
 
 #modal-description {

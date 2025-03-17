@@ -69,14 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   projects.forEach(project => {
       project.addEventListener("click", () => {
-          const title = project.getAttribute("data-title");
+          const titleLink = project.getAttribute("data-title-link");
           const description = project.getAttribute("data-description");
           const subtitle = project.getAttribute("data-subtitle");
           const imageSrc = project.getAttribute("data-image");
           const link = project.getAttribute("data-link");
 
-          modalTitle.textContent = title;
+          
+          modalTitleLink.textContent = titleLink;
           modalTitleLink.href = link;
+          // modalTitle.textContent = title;
+          // modalTitleLink.style.display = "inline-block";
           modalSubtitle.textContent = subtitle;
           modalDescription.textContent = description;
           modalImage.src = imageSrc; // Change l'image
