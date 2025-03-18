@@ -399,25 +399,22 @@ h1 {
     border-radius: 8px;
     border: 1px solid #ddd;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }   
 
 .work_grid img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit:contain;
 }
 
-.work_grid a {
-    width: 100%;
-}
-
- .work_grid a:hover {
+ .work_grid img:hover {
     opacity: 0.6;
     transition: transform .8s ease;
     transform: scale(1.5);
 }
 
-/* MODAL - Design amélioré */
+/* MODAL */
 .modal {
     display: none;
     position: fixed;
@@ -436,7 +433,7 @@ h1 {
     background: white;
     padding: 25px;
     width: 600px;
-    height: 500px;
+    height: auto;
     border-radius: 12px;
     /* text-align: center; */
     position: relative;
@@ -474,7 +471,7 @@ h1 {
 
 
 /* Lien du projet */
-#modal-link {
+/* #modal-link {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
@@ -488,7 +485,7 @@ h1 {
 
 #modal-link:hover {
     background: #0056b3;
-}
+} */
 
 /* #modal-title {
     font-size: 20px;
@@ -499,7 +496,7 @@ h1 {
 } */
 
 #modal-title-link {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -508,11 +505,24 @@ h1 {
     display: inline-block;
 }
 
+#modal-title-link::after {
+    position: absolute;
+    content: "";
+    background-image: url(./img/link.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 12px;
+    /* right: 40px; */
+    /* top: 10%; */
+    margin-left: 10px;
+}
+
 #modal-description {
     font-size: 13px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #modal-subtitle {
@@ -526,8 +536,16 @@ h1 {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     display: none; /* Caché par défaut, s'affiche quand une image est chargée */
+    margin-bottom: 20px;
+}
+
+#modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
 }
 
 /* PORTFOLIO SECTION */
