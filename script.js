@@ -108,3 +108,26 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 });
+
+/*works category button*/
+document.addEventListener("DOMContentLoaded", () => {
+    const categoryLinks = document.querySelectorAll(".work__category a");
+    const worksItems = document.querySelectorAll(".work_item");
+
+    categoryLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const category = link.getAttribute("data-category");
+
+            if (category) {
+                worksItems.forEach(item => {
+                    item.style.display = item.getAttribute("data-category").includes(category) ? "block" : "none";
+                });
+            } else {
+                worksItems.forEach(item => {
+                    item.style.display = "block";
+                });
+            }
+        });
+    });
+});
