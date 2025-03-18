@@ -359,10 +359,14 @@ h1 {
 /* WORK SECTION */
 
 .work__category__wrapper .work__categories {
-    display: grid;
+    display: flex;
     gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
+
+.work__category__wrapper {
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .work__category__wrapper ul {
@@ -370,7 +374,6 @@ h1 {
     margin: 0;
     padding: 0;
 }
-
 
 .work__categories .work__category a {
     color: #000;
@@ -1031,3 +1034,9 @@ footer p {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .work__category__wrapper .work__categories {
+        width: 100%;
+        flex-direction: column;
+    }
+}

@@ -113,21 +113,34 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const categoryLinks = document.querySelectorAll(".work__category a");
     const worksItems = document.querySelectorAll(".work_item");
+    const defaultCategory = "coding"; // Catégorie par défaut
+
+    function filterWorks(category) {
+        worksItems.forEach(item => {
+            item.style.display = item.getAttribute("data-category").includes(category) ? "block" : "none";
+        });
+
+        // Mettre à jour l'état visuel des liens de catégorie
+        categoryLinks.forEach(link => {
+            if (link.getAttribute("data-category") === category) {
+                link.classList.add("active"); // Ajoute une classe pour styliser la catégorie active
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
 
     categoryLinks.forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
             const category = link.getAttribute("data-category");
-
-            if (category) {
-                worksItems.forEach(item => {
-                    item.style.display = item.getAttribute("data-category").includes(category) ? "block" : "none";
-                });
-            } else {
-                worksItems.forEach(item => {
-                    item.style.display = "block";
-                });
-            }
+            filterWorks(category);
         });
     });
+
+    // Sélectionner automatiquement la catégorie "coding" au chargement
+    const defaultLink = document.querySelector(`.work__category a[data-category="${defaultCategory}"]`);
+    if (defaultLink) {
+        filterWorks(defaultCategory);
+    }
 });
