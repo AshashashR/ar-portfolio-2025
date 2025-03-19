@@ -470,6 +470,7 @@ h1 {
     align-items: center;
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
+    z-index: 9999; /* Assurer que le modal soit au-dessus du contenu */
 }
 
 .modal-content {
@@ -484,6 +485,7 @@ h1 {
     opacity: 0;
     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10000; /* Toujours au-dessus du fond du modal */
 }
 
 /* Effet d’apparition */
@@ -530,13 +532,13 @@ h1 {
     background: #0056b3;
 } */
 
-/* #modal-title {
-    font-size: 20px;
+#modal-title {
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-} */
+}
 
 #modal-title-link {
     font-size: 16px;
@@ -579,7 +581,6 @@ h1 {
     max-width: 100%;
     height: auto;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     display: none; /* Caché par défaut, s'affiche quand une image est chargée */
     margin-bottom: 20px;
@@ -589,6 +590,73 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit:cover;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.slider button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+#modal-video-container {
+    width: 100%;
+    max-width: 600px; /* Largeur maximale de la vidéo */
+    margin: 20px auto;
+    text-align: center;
+}
+
+#modal-video {
+    width: 100%; /* La vidéo s’adapte à son conteneur */
+    max-height: 400px; /* Hauteur max pour éviter qu’elle ne soit trop grande */
+    border-radius: 10px; /* Coins arrondis pour un meilleur rendu */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Légère ombre pour l’esthétique */
 }
 
 /* PORTFOLIO SECTION */
