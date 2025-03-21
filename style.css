@@ -527,8 +527,6 @@ h1 {
     display: flex;
     gap: 3.75rem;
     align-items: center;
-    width: -moz-fit-content;
-    width: fit-content;
 }
 
 @media screen and (max-width: 767px) {
