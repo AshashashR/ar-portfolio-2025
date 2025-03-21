@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ash_logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Profile</title>
+</head>
+
+<body>
+    <!-- PC NAVBAR -->
+    <header id="header">
+
+
+        <nav class="nav_container_pc">
+            <img src="ash_logo.jpg" alt="Logo" class="logo">
+
+            <div class="links">
+                <ul>
+                    <li><a href="index.html" class="home-hover">
+                            <p class="nav-text">home</p>
+                        </a></li>
+
+                    <li><a href="#about" class="about-hover">
+                            <p class="nav-text">about</p>
+                        </a></li>
+                    <li><a href="#work" class="work-hover">
+                            <p class="nav-text">work</p>
+                        </a></li>
+                    <li><a href="#portfolio" class="portfolio-hover">
+                            <p class="nav-text">personal work</p>
+                        </a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- MOBILE NAVBAR -->
+    <nav class="nav_container" id="navbar">
+        <img src="ash_logo.jpg" alt="Logo" class="logo">
+
+        <div class="overlay">
+            <span class="hamburger" onclick="openNav()">≡</span>
+            <!-- overlay -->
+            <div>
+                <div class="overlaytext hide" id="toggle">
+                    <ul class="links-small">
+                        <li><a href="#home" class="link">top</a></li>
+                        <li><a href="#about" class="link">about</a></li>
+                        <li><a href="#work" class="link">work</a></li>
+                        <li><a href="#portfolio" class="link">personal work</a></li>
+                        <!-- <li><a href="#contact" class="link">contact me</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="profile" id="profile">
+            <div class="profile__cont inner">
+                <h1 class="profile__title title">profile</h1>
+                <div class="profile__list">
+                    <div class="profile__img">
+                        <img src="img/profile.png" alt="" width="300px"/>
+                    </div>
+                    <div class="profile__wrap">
+                        <div class="profile__textbox">
+                            <p class="profile__text">
+                                ご覧いただきありがとうございます！<br />
+                                東京・神奈川を拠点にフリーランスでWeb制作を行っております、秋山千尋です。
+                            </p>
+                            <p class="profile__text">
+                                3年のエンジニア経験を活かしたスピーディなコーディングが可能です。
+                            </p>
+                            <p class="profile__text">
+                                丁寧なコミュニケーション・クイックレスポンスを第一に心がけています。<br />
+                                お客様・パートナー様の事業成長につながるよう<br />
+                                誠心誠意 対応させていただきます。
+                            </p>
+                        </div>
+                        <!-- <div class="profile__btn">
+                        <a href="" class="btn">もっと見る</a>
+                      </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="history">
+            <div class="history__cont inner">
+                <h1 class="profile__title title">history</h1>
+                <div class="history__line">
+                    <div class="history__left">1995年</div>
+                    <div class="history__right">
+                        茨城県出身、4人きょうだいの長女として生まれる
+                        <p>
+                            祖父が大工、両親がパティシエという、生粋のものづくり家系で育ちました。
+                            幼少期からお菓子作り、手芸、デッサン、ミシンなどさまざまなものづくりを楽しんでいたこともあり、当時からものづくりが私の天職だと確信していました。
+                        </p>
+                    </div>
+                </div>
+                <div class="history__line">
+                    <div class="history__left">2013年</div>
+                    <div class="history__right">
+                        上智大学文学部　入学
+                        <p>
+                            当時は将来何になりたい！という夢がなく、西洋の文化や歴史に興味があったというのもあり、フランス文学を専攻していました。在学中はバイトに明け暮れ、老舗フルーツパーラーやレストランでひたすらパフェやハンバーグを作っていました。
+                        </p>
+                    </div>
+                </div>
+                <div class="history__line">
+                    <div class="history__left">2017年</div>
+                    <div class="history__right">
+                        上智大学文学部卒業、福岡のIT企業でエンジニアになる
+                        <p>
+                            新卒で都内の会社に就職しましたが、福岡での3ヶ月の研修が楽しすぎて自ら希望して福岡配属になりました。C#エンジニアとして販売管理システムの開発・改修を行っていました。
+                            文系出身で苦労もありましたが、得意のキャッチアップ力を活かし、会社のメイン商品の開発案件に参画したり、
+                            有志で参加したハッカソンでは優秀賞を獲得しました。
+                        </p>
+                    </div>
+                </div>
+                <div class="history__line">
+                    <div class="history__left">2020年</div>
+                    <div class="history__right">
+                        雀荘店員兼デザイナーとして働く
+                        <p>
+                            エンジニアで初めてPCでのものづくりを経験し、魅了されました。特に見た目を作るところに興味が湧き、デザインの仕事に挑戦しました。
+                            麻雀店勤務の傍ら、<br />
+                            ・麻雀店のPOPやポスターデザイン、<br />
+                            ・HPのSEO・MEO対策、<br />
+                            ・全国麻雀組合の紹介動画や啓発ポスターの制作、<br />
+                            ・知人の紹介でイベントのタペストリー制作<br />
+                            など幅広い業務を経験しました。
+                        </p>
+                    </div>
+                </div>
+                <div class="history__line">
+                    <div class="history__left">2024年</div>
+                    <div class="history__right">
+                        Web制作コーダーとして活動
+                        <p>
+                            バックエンドエンジニアやデザイナーなど、さまざまな仕事を経験する中で、PCを使ったものづくりかつ、見た目を作る仕事が好きだと知ることができました。そんな中でWeb制作と出会い、現在はこの仕事が天職であると感じています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© Ashley R.</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
