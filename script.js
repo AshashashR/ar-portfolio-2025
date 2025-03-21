@@ -13,7 +13,7 @@ var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
 function myFunction() {
-  if (window.pageYOffset >= sticky) {
+  if (window.scrollY >= sticky) {
     navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const subtitle = project.getAttribute("data-subtitle");
       const imageSrc = project.getAttribute("data-image");
       const link = project.getAttribute("data-link");
-      const videoSrc = project.getAttribute("data-video"); // Récupérer la vidéo
+      let videoUrl = project.getAttribute("data-video"); // Récupérer la vidéo
 
       modalTitleLink.textContent = titleLink;
       modalTitleLink.href = link;
@@ -114,28 +114,32 @@ document.addEventListener("DOMContentLoaded", () => {
       // modalTitleLink.style.display = "inline-block";
       modalSubtitle.textContent = subtitle;
       modalDescription.textContent = description;
-        modalImage.src = imageSrc; // Change l'image
-        modalImage.style.display = "block";
+      modalImage.src = imageSrc; // Change l'image
+      modalImage.style.display = "block";
 
-
-        // Cacher l'image principale si un slider est activé
+      // Cacher l'image principale si un slider est activé
       if (imageSources.length > 1) {
-        modalImage.style.display = "none";  // Cacher l'image principale si plusieurs images
+        modalImage.style.display = "none"; // Cacher l'image principale si plusieurs images
       } else {
-        modalImage.src = imageSrc;  // Sinon, afficher l'image principale
+        modalImage.src = imageSrc; // Sinon, afficher l'image principale
         modalImage.style.display = "block";
       }
 
       // Gestion de la vidéo
-      if (videoSrc) {
-        modalVideoSource.src = videoSrc;
-        modalVideo.load(); // Recharge la vidéo
+      if (videoUrl) {
+        // Vérifie si l'URL est une URL Vimeo et la convertit en URL d'intégration
+        const vimeoIdMatch = videoUrl.match(/vimeo\.com\/(\d+)/);
+        if (vimeoIdMatch) {
+          videoUrl = `https://player.vimeo.com/video/${vimeoIdMatch[1]}`;
+        }
+
+        modalVideo.src = videoUrl;
         modalVideoContainer.style.display = "block";
         modalImage.style.display = "none";
       } else {
         modalVideoContainer.style.display = "none";
       }
-      
+
       // Vider le slider avant d'ajouter de nouvelles images
       modalSlider.innerHTML = "";
 
@@ -153,8 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalSlider.style.display = "flex";
         prevButton.style.display = "block";
         nextButton.style.display = "block";
-
-        } else if (imageSources.length === 1) {
+      } else if (imageSources.length === 1) {
         // Si une seule image, l'afficher sans slider
         const img = document.createElement("img");
         img.src = imageSources[0].trim();
@@ -165,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
         modalSlider.style.display = "none";
         prevButton.style.display = "none";
         nextButton.style.display = "none";
-
       } else {
         // Si aucune image, cacher le slider
         modalSlider.style.display = "none";
