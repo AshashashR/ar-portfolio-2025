@@ -246,3 +246,54 @@ document.addEventListener("DOMContentLoaded", () => {
     filterWorks(defaultCategory);
   }
 });
+
+
+//Modal window personal work
+document.addEventListener("DOMContentLoaded", () => {
+  const portfolioProjects = document.querySelectorAll(".portfolio_item");
+  const modal = document.getElementById("modal");
+  const modalTitleLink = document.getElementById("modal-title-link");
+  const modalSubtitle = document.getElementById("modal-subtitle");
+  const modalDescription = document.getElementById("modal-description");
+  const modalImage = document.getElementById("modal-image");
+  const closeModal = document.querySelector(".close");
+
+  portfolioProjects.forEach((project) => {
+    project.addEventListener("click", () => {
+      const titleLink = project.getAttribute("data-title-link");
+      const description = project.getAttribute("data-description");
+      const subtitle = project.getAttribute("data-subtitle");
+      const imageSrc = project.getAttribute("data-image");
+      const link = project.getAttribute("data-link");
+
+      modalTitleLink.textContent = titleLink;
+      modalTitleLink.href = link;
+      modalSubtitle.textContent = subtitle;
+      modalDescription.textContent = description;
+      modalImage.src = imageSrc; // Change l'image
+      modalImage.style.display = "block";
+
+
+      // Assure que la modal s'affiche à chaque clic
+      modal.style.display = "flex";
+      setTimeout(() => {
+        modal.classList.add("show");
+      }, 10); // Petit délai pour déclencher l'animation
+    });
+  });
+
+  function closeModalFunc() {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 400);
+  }
+
+  closeModal.addEventListener("click", closeModalFunc);
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModalFunc();
+    }
+  });
+});

@@ -57,7 +57,7 @@
             <div>
                 <div class="overlaytext hide" id="toggle">
                     <ul class="links-small">
-                        <li><a href="#home" class="link">top</a></li>
+                        <li><a href="#home" class="link">home</a></li>
                         <li><a href="#about" class="link">about</a></li>
                         <li><a href="#work" class="link">work</a></li>
                         <li><a href="#portfolio" class="link">personal work</a></li>
@@ -104,7 +104,7 @@
 
                 <div class="wrapper">
                     <h1 class="home_title">
-                        hello
+                        hello,<br> i'm Ashley
                     </h1>
                     <div class="hr_line"></div>
 
@@ -113,6 +113,8 @@
                         i'm a food lover<br>
                         i'm a meme queen<br>
                     </h3>
+                    <br>
+                    <h3 class="home_subtitle">Based in Fukuoka, Japan</h3>
                 </div>
 
 
@@ -174,30 +176,30 @@
 
             <!-- MOBILE VERSION -->
 
-            <div class="about_container_mobile hidden">
+            <div class="about_container_mobile">
                 <div class="wrapper">
                     <h1 class="about_title">
                         about me
                     </h1>
                     <div class="hr_line"></div>
                     <h4 class="about_subtitle">
-                        From Paris, France. <br>
-                        Based in Fukuoka, Japan.
+                        From Paris, France. 🇫🇷<br>
+                        Based in Fukuoka, Japan. 🇯🇵
                     </h4>
                     <p class="about_text">
                         My name is Ashley and I am a web developer.<br>
-                        I am currently working as a web developer
-                        in a Japanese company that owns several e-commerce shops.
-                        <br><br>
-                        During my seven years in Japan, I mostly worked in the sectors of
-                        customer service (sales representative) and translation.<br><br>
-                        I decided it was time for a career change in 2021,
-                        therefore I began studying web programming.
-                        I've always been creative and an excellent problem solver
-                        with high communication skills, and I believe it's one of the many qualities
-                        required to thrive in IT. I am always trying to think outside the box and
-                        I am still learning new things, especially in web development and I really enjoy this new career
-                        change !
+                            I am currently working as a web developer
+                            in a Japanese company that owns several e-commerce shops.
+                            <br><br>
+                            During my seven years in Japan, I mostly worked in the sectors of
+                            customer service (sales representative) and translation.<br><br>
+                            I decided it was time for a career change in 2021,
+                            therefore I began studying web programming.
+                            I've always been creative and an excellent problem solver
+                            with high communication skills, and I believe it's one of the many qualities
+                            required to thrive in IT. I am always trying to think outside the box and
+                            I am still learning new things, especially in web development and I really enjoy this new
+                            career change !
                     </p>
                     <a href="profile.html" class="viewmore" target="_blank">View more</a>
                     <!-- <h3 class="about-details">WHAT I DO</h3>
@@ -402,61 +404,73 @@
             </div>
         </div>
 
+        <div class="diagonal-line"></div>
+
         <section class="portfolio" id="portfolio">
             <div class="portfolio_container">
                 <h1 class="portfolio_title">
-                    portfolio
+                    personal work
                 </h1>
                 <div class="hr_line"></div>
                 <div class="portfolio_grid">
-                    <div class="item">
-                        <a href="https://portfolio-ashley-new.herokuapp.com/" target="_blank">
-                            <img src="./work img/old_portfolio.png" alt="old portfolio app">
-                        </a>
+                    <div class="portfolio_item" data-title-link="最初のポートフォリオ"
+                        data-subtitle="HTML,CSS,Bootstrap"
+                        data-description="最初の個人ポートフォリオです。"
+                        data-image="./work img/old_portfolio.png" data-link="https://portfolio-ashley-new.herokuapp.com/">
+                        <img src="./work img/old_portfolio.png" alt="ポートフォリオ">
                     </div>
-                    <div class="item">
-                        <a href="https://ash-twitter-clone.herokuapp.com/" target="_blank">
-                            <img src="./work img/twitter-clone-app.png" alt="twitter clone app">
-                        </a>
+                    <div class="portfolio_item" data-title-link="Twitterに似たようなアプリ"
+                    data-subtitle="HTML,CSS,Python,Django"
+                    data-description="Djangoで構築されたTwitterクローンアプリです。"
+                    data-image="./work img/twitter-clone-app.png" data-link="https://ash-twitter-clone.herokuapp.com/">
+                        <img src="./work img/twitter-clone-app.png" alt="twitter clone app">
                     </div>
-                    <div class="item">
-                        <a href="https://tenpadayo.herokuapp.com/" target="_blank">
-                            <img src="./work img/tenpadayo-screenshot.png" alt="tenpa da yo app">
-                        </a>
+                    <div class="portfolio_item" data-title-link="Tenpa da yo!"
+                    data-subtitle="HTML,CSS,JavaScript,Python,Django"
+                    data-description="私がゼロから作成した初めてのプロジェクトです。「Tenpa da yo」は、日本語の「天然パーマ」から来ております。このアプリを作ったきっかけは、
+                    くせ毛に悩んでいる人たちを助け、彼らのくせ毛ケアを少しでも楽にすること、そして最終的には自分の自然な髪を好きになってもらうことでした。"
+                    data-image="./work img/tenpadayo-screenshot3.png" data-link="https://tenpadayo.herokuapp.com/">
+                            <img src="./work img/tenpadayo-screenshot3.png" alt="tenpa da yo app">
                     </div>
-                    <div class="item">
-                        <a href="https://theflaggame.herokuapp.com/" target="_blank">
+                    <div class="portfolio_item" data-title-link="The Flag Game"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="ヨーロッパの国旗を使ったシンプルなクイズゲームです。"
+                    data-image="./work img/flag-game.png" data-link="https://theflaggame.herokuapp.com/">
                             <img src="./work img/flag-game.png" alt="the flag game app">
-                        </a>
                     </div>
-                    <div class="item">
-                        <a href="https://ash-github-user-search.herokuapp.com/" target="_blank">
-                            <img src="./work img/github-user-search-screenshot.png" alt="github-user-search app">
-                        </a>
+                    <div class="portfolio_item" data-title-link="Cute Calculator"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="可愛い電卓アプリです。"
+                    data-image="./work img/cute-calcuator-screenshot2.png" data-link="https://ashashashr.github.io/cute-calculator/">
+                            <img src="./work img/cute-calcuator-screenshot2.png" alt="cute calculator app">
                     </div>
-                    <div class="item">
-                        <a href="https://ashashashr.github.io/cute-calculator/" target="_blank">
-                            <img src="./work img/cute-calcuator-screenshot.png" alt="cute calculator app">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://ashashashr.github.io/base-apparel-coming-soon-master-challenge/"
-                            target="_blank">
-                            <img src="./work img/base-apparel-coming-soon-page.png"
+                    <div class="portfolio_item" data-title-link="Frontend Mentor - Base Apparel Coming Soon Page"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="This is a solution to the Base Apparel Coming Soon Page !"
+                    data-image="./work img/base-apparel-coming-soon-page2.png" data-link="https://ashashashr.github.io/base-apparel-coming-soon-master-challenge/">
+                            <img src="./work img/base-apparel-coming-soon-page2.png"
                                 alt="base-apparel-coming-soon-page app">
-                        </a>
                     </div>
 
-                    <div class="item">
-                        <a href="https://ashashashr.github.io/sunnyside-agency-landing-page-main/" target="_blank">
-                            <img src="./work img/sunnyside-agency-landing-page.png" alt="sunnyside agency landing page">
-                        </a>
+                    <div class="portfolio_item" data-title-link="Frontend Mentor - Sunnyside Agency Landing Page"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="This is a solution to the Sunnyside Agency Landing Page !"
+                    data-image="./work img/sunnyside-agency-landing-page2.png" data-link="https://ashashashr.github.io/sunnyside-agency-landing-page-main/">
+                            <img src="./work img/sunnyside-agency-landing-page2.png" alt="sunnyside agency landing page">
                     </div>
 
-                    <div class="item">
-                        <a href="https://ashashashr.github.io/avatar_select/" target="_blank">
-                            <img src="./work img/avatar-select-screenshot.png" alt="avatar">
-                        </a>
+                    <div class="portfolio_item" data-title-link="Avatar selection"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="株式会社B.B.Enterpriseで活動させていただいた際、ゲーム制作の一環として、自分のアバターを作成する仕組みを開発する案件を担当しました。"
+                    data-image="./work img/avatar-select-screenshot2.png" data-link="https://ashashashr.github.io/avatar_select/">
+                            <img src="./work img/avatar-select-screenshot2.png" alt="avatar">
+                    </div>
+
+                    <div class="portfolio_item" data-title-link="Etch-a-sketch"
+                    data-subtitle="HTML,CSS,JavaScript"
+                    data-description="エッチ・ア・スケッチのアプリを制作しました。エッチ・ア・スケッチ（Etch A Sketch）は、2つのダイヤルを操作して絵を描くおもちゃです。"
+                    data-image="./work img/etchasketch.png" data-link="https://ashashashr.github.io/etch-a-sketch/">
+                            <img src="./work img/etchasketch.png" alt="etch-a-sketch">
                     </div>
 
                 </div>

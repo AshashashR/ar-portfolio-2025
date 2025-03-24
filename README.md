@@ -27,7 +27,7 @@ agrandir les miniatures, rebord arrondis OK
 
 work: chaque page, je dois presenter en quelques lignes pour le projet dans une nouvelle page. OK
 
-portfolio-> personal work
+portfolio-> personal work OK
 
 contact' contact form?
 
@@ -35,6 +35,6 @@ ajouter top bouton
 
 revoir le hamburger button
 
-#modal-title-link::after  ne pas oublier de le faire de maniere responsive
+#modal-title-link::after  ne pas oublier de le faire de maniere responsive OK
 
 rajouter 3 boutons pour la categorie work coding web design promotion OK
