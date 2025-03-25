@@ -21,6 +21,10 @@ ce que je dois faire:
 About: creer une nouvelle page qui s'appelle Profile ou je me presente et je parle de mon parcours.
 inspiration couleur design
 
+ANGLAIS/JAPONAIS
+
+quand je scroll les sections saffichent de maniere smooth
+
 inverser portfolio et work OK
 
 agrandir les miniatures, rebord arrondis OK
@@ -31,9 +35,9 @@ portfolio-> personal work OK
 
 contact' contact form?
 
-ajouter top bouton
+ajouter top bouton OK
 
-revoir le hamburger button
+revoir le hamburger button OK
 
 #modal-title-link::after  ne pas oublier de le faire de maniere responsive OK
 

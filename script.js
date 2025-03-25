@@ -1,10 +1,48 @@
-//SP版切り替えができるハンバーガーメニュー
-const toggle = document.querySelector("#toggle");
+// scroll to top button
+// Get the button
+let mybutton = document.getElementById("myBtn");
 
-function openNav() {
-  toggle.classList.toggle("visible");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
 
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+//SP版切り替えができるハンバーガーメニュー
+function openNav() {
+  var menu = document.getElementById("toggle");
+  menu.classList.toggle("visible");
+
+  // Ajoute ou enlève la classe "open" pour transformer l'icône du hamburger en X
+  var hamburger = document.querySelector(".hamburger");
+  hamburger.classList.toggle("open");
+  
+  // Ajouter un événement sur chaque lien pour fermer le menu quand l'utilisateur clique dessus
+  var links = document.querySelectorAll(".links-small a");
+  links.forEach(function(link) {
+      link.addEventListener("click", function() {
+          // Ferme le menu en enlevant la classe "visible" et le "open" sur l'icône
+          menu.classList.remove("visible");
+          hamburger.classList.remove("open");
+      });
+  });
+}
 window.onscroll = function () {
   myFunction();
 };

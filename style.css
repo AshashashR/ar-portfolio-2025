@@ -987,19 +987,88 @@ h1 {
     display: none;
 }
 
+/* /////////// BUTTON TO TOP ///////////*/
+
+.top {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+  
+  .top img {
+    display: block;
+    width: 100%;
+  }
+  
+  #myBtn {
+    /* display: none; */
+    position: fixed;
+    width: 70px;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn img:hover {
+    /* opacity: 0.5; */
+    background-color: #cf1516;
+    transition: all ease-in-out 250ms;
+  }
+
 /* FOOTER */
 
-footer {
-    text-align: center;
-    padding-left: 5%;
-    padding-bottom: 1em;
+
+.footer {
+    background-color: #cf1516; /* Couleur rose */
+    color: white;              /* Texte blanc */
+    text-align: center;        /* Centrer le texte */
+    padding: 2em 0;            /* Espacement vertical */
+    position: relative;        /* Pour le positionner en bas de la page */
+    width: 100%;
 }
 
-footer p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+.footer p {
+    margin: 0.5em 0;           /* Espacement entre les paragraphes */
+    font-family: 'Montserrat', sans-serif;  /* Police d'écriture */
+    font-size: 16px;           /* Taille de police */
 }
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #c17070; /* Un rose plus foncé pour le survol */
+}
+
+/* BUTTON TO TOP */
+
+@media screen and (max-width: 767px) {
+    #myBtn {
+      /* display: none; */
+      position: fixed;
+      width: 70px;
+      bottom: 20px;
+      right: 0;
+      z-index: 99;
+      font-size: 10px;
+      border: none;
+      outline: none;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+}
+  
 
 @media only screen and (max-width: 992px) {
 
@@ -1047,7 +1116,7 @@ footer p {
     }
 
     .nav_container .logo {
-        width: 60px;
+        width: 70px;
         margin: 0 10px;
     }
 
@@ -1058,19 +1127,20 @@ footer p {
         padding: 0;
     }
 
-    .overlay .overlaytext {
+    .overlaytext {
         width: 100vw;
         height: 100vh; /* Faire en sorte que la hauteur prenne toute la page */
-        background-color: #ffe7e7; /* Fond rose */
+        background-color: rgba(210, 152, 152, 0.98); /* Fond rose */
         color: black;
         text-align: center;
         position: absolute;
         z-index: 1;
-        top: 114%;
+        top: 100%;
         right: 0;
-        padding: 50px 0;
+        padding: 190px 0 50px;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        /* transition: transform .3s ease; */
     }
 
     .overlaytext ul {
@@ -1082,14 +1152,23 @@ footer p {
         display: flex;
         flex-direction: column;
         list-style: none;
-        gap: 2em;
+        /* gap: 2em; */
     }
 
     .links-small a {
+        display: inline-block;
         text-decoration: none;
-        color: black;
+        color: #fff;
         font-size: 20px;
         font-family: 'Montserrat', sans-serif;
+        border-bottom: 1px solid #fff;
+        width: 240px;
+        padding: 20px 0;
+        font-weight: 600;
+    }
+
+    .overlaytext li:nth-child(1) a {
+        border-top: 1px solid #fff;
     }
 
     .hide {
@@ -1101,11 +1180,23 @@ footer p {
     }
 
     .hamburger {
-        font-size: 40px;
+        font-size: 60px;
         color: black;
         cursor: pointer;
         margin-right: 0;
-        padding-right: 15px;
+        padding-right: 20px;
+        display: inline-block;
+        transition: all 0.3s;
+    }
+    .hamburger:before {
+        content: "≡"; /* Initial hamburger icon */
+    }
+
+    /* Transform the hamburger into a cross */
+    .hamburger.open:before {
+        content: "×"; /* Cross icon */
+        font-size: 60px;
+        transition: all 0.3s;
     }
 
     /* HOME CONTAINER */
@@ -1348,20 +1439,6 @@ footer p {
 
     .contact_container .wrapper img {
         width: 60px;
-    }
-
-    /* FOOTER */
-
-    footer {
-        text-align: center;
-        padding-left: 5%;
-        padding-bottom: 1em;
-    }
-
-    footer p {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
-        font-weight: 400;
     }
 }
 
