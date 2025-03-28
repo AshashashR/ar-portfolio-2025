@@ -35,6 +35,7 @@ portfolio-> personal work OK
 
 contact' contact form?
 
+
 ajouter top bouton OK
 
 revoir le hamburger button OK
@@ -42,3 +43,8 @@ revoir le hamburger button OK
 #modal-title-link::after  ne pas oublier de le faire de maniere responsive OK
 
 rajouter 3 boutons pour la categorie work coding web design promotion OK
+
+
+コーディング coding
+販促物デザイン promotional design
+動画編集 video editing

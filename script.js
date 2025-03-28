@@ -339,6 +339,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //traduction EN/JP 
 const translations = {
+  ja: {
+    title: "🇫🇷フランス・パリ出身で、<br>福岡市に拠点を置いています。🇯🇵",
+    description: `私はAshleyと申します。現在、日本の企業でコーダとして働いており、複数のECサイトの運営に携わっています。<br><br>
+      日本に来てから7年間は、主にカスタマーサービス（販売員・営業）や翻訳の仕事をしていましたが、2021年にキャリアチェンジを決意し、プログラミングの勉強を始めました。<br><br>
+      もともと創造力があり、問題解決が得意で、コミュニケーション能力も高い方だと自負しています。これらのスキルはIT業界で活躍する上でとても重要だと感じています。
+      常に新しい視点で物事を考えることを大切にしており、特にウェブ開発の分野では日々学ぶことが尽きません。この新しいキャリアにとてもやりがいを感じ、楽しく仕事をしています！`,
+    button: "🇬🇧",
+    coding: "コーディング",
+    promotion: "販促物デザイン",
+    video: "動画編集"
+  },
+
   en: {
     title: "From Paris, France. 🇫🇷<br> Based in Fukuoka, Japan. 🇯🇵",
     description: `My name is Ashley and I am a web developer.<br>
@@ -348,26 +360,21 @@ const translations = {
       I decided it was time for a career change in 2021, therefore I began studying web programming.
       I've always been creative and an excellent problem solver with high communication skills, and I believe it's one of the many qualities
       required to thrive in IT. I am always trying to think outside the box and I am still learning new things, especially in web development and I really enjoy this new career change !`,
-    button: "🇯🇵"
-  },
-  ja: {
-    title: "🇫🇷フランス・パリ出身で、<br>福岡市に拠点を置いています。🇯🇵",
-    description: `私はAshleyと申します。現在、日本の企業でコーダとして働いており、複数のECサイトの運営に携わっています。<br><br>
-      日本に来てから7年間は、主にカスタマーサービス（販売員・営業）や翻訳の仕事をしていましたが、2021年にキャリアチェンジを決意し、プログラミングの勉強を始めました。<br><br>
-      もともと創造力があり、問題解決が得意で、コミュニケーション能力も高い方だと自負しています。これらのスキルはIT業界で活躍する上でとても重要だと感じています。
-      常に新しい視点で物事を考えることを大切にしており、特にウェブ開発の分野では日々学ぶことが尽きません。この新しいキャリアにとてもやりがいを感じ、楽しく仕事をしています！`,
-    button: "🇬🇧"
+    button: "🇯🇵",
+    coding: "Coding",
+    promotion: "Promotional Design",
+    video: "Video Editing"
   }
 };
 
-let currentLang = "en";
+let currentLang = "ja";  // Définit la langue par défaut en japonais
 
-// Sélectionner tous les boutons de langue
+// Sélectionner TOUS les boutons de langue (PC et mobile)
 const langButtons = document.querySelectorAll(".lang_button");
 
 // Fonction pour changer la langue
 function toggleLanguage() {
-  currentLang = currentLang === "en" ? "ja" : "en";
+  currentLang = currentLang === "ja" ? "en" : "ja";  // Basculer entre "ja" et "en"
 
   // Appliquer la traduction
   document.getElementById("about_subtitle").style.opacity = "0";
@@ -377,9 +384,30 @@ function toggleLanguage() {
     document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
     document.getElementById("about_text").innerHTML = translations[currentLang].description;
 
-    // Mettre à jour TOUS les boutons de langue
+    // Mettre à jour les catégories de travail
+    document.querySelectorAll('.work__category a').forEach(link => {
+      const category = link.getAttribute('data-category');
+      link.innerHTML = translations[currentLang][category];  // Mettre à jour le texte des catégories
+    });
+
+    // Mettre à jour les classes du body (ou un autre parent)
+    if (currentLang === "en") {
+      document.body.classList.add("english");  // Ajouter la classe pour l'anglais
+      document.body.classList.remove("japanese");  // Retirer la classe pour le japonais
+    } else {
+      document.body.classList.add("japanese");  // Ajouter la classe pour le japonais
+      document.body.classList.remove("english");  // Retirer la classe pour l'anglais
+    }
+
+    // Mettre à jour TOUS les boutons de langue (version PC et mobile)
     langButtons.forEach(button => {
-      button.innerHTML = translations[currentLang].button;
+      if (button.id === "lang-toggle-pc") {
+        // Sur PC, on affiche les drapeaux 🇬🇧 ou 🇯🇵
+        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; 
+      } else if (button.id === "lang-toggle-mobile") {
+        // Sur mobile, afficher le drapeau 🇯🇵 ou 🇬🇧
+        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; 
+      }
     });
 
     // Effet de fade-in
@@ -388,7 +416,37 @@ function toggleLanguage() {
   }, 300);
 }
 
-// Ajouter l'événement à TOUS les boutons
+// Ajouter l'événement pour TOUS les boutons de langue
 langButtons.forEach(button => {
   button.addEventListener("click", toggleLanguage);
+});
+
+// Initialiser la langue à "ja" (japonais) lors du chargement
+window.addEventListener('load', function() {
+  document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
+  document.getElementById("about_text").innerHTML = translations[currentLang].description;
+
+  // Mettre à jour les boutons au début
+  langButtons.forEach(button => {
+    if (button.id === "lang-toggle-pc") {
+      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";  // Afficher les drapeaux sur PC
+    } else if (button.id === "lang-toggle-mobile") {
+      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";  // Afficher les drapeaux sur mobile
+    }
+  });
+
+  // Mettre à jour les catégories dès le début
+  document.querySelectorAll('.work__category a').forEach(link => {
+    const category = link.getAttribute('data-category');
+    link.innerHTML = translations[currentLang][category];  // Mettre à jour le texte des catégories
+  });
+
+  // Appliquer la classe initiale
+  if (currentLang === "en") {
+    document.body.classList.add("english");
+    document.body.classList.remove("japanese");
+  } else {
+    document.body.classList.add("japanese");
+    document.body.classList.remove("english");
+  }
 });

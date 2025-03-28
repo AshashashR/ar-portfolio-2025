@@ -91,10 +91,9 @@ font-family: 'Playfair Display', serif;*/
 }
 
 .nav_container_pc .links .lang_button {
-    background: #d29898;
-    color: white;
+    background: transparent;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 25px;
     border: none;
     padding: 10px 15px;
     border-radius: 15px;
@@ -105,13 +104,10 @@ font-family: 'Playfair Display', serif;*/
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 90px; /* Ajuste selon la longueur du plus grand texte */
-    text-align: center;
 }
 
 .nav_container_pc .links .lang_button:hover {
-    background: #b56b6b;
-    transform: scale(1.05);
+    transform: scale(1.5);
 }
 
 .nav_container_pc .nav-text {
@@ -617,6 +613,22 @@ h1 {
     border: 2px solid #d29898;
     min-width: 300px;
 }
+
+
+/* Style spécifique pour les catégories en anglais */
+.english .work__category a {
+    font-family: 'Montserrat', sans-serif;  /* Changer la police */
+    font-size: 18px;  /* Changer la taille de la police */
+    color: #333;  /* Exemple de couleur */
+    font-weight: 400;
+  }
+  
+  /* Style spécifique pour les catégories en japonais (si nécessaire) */
+  .japanese .work__category a {
+    font-family: "Yu Gothic", sans-serif;  /* Exemple de police japonaise */
+    font-size: 16px;
+    color: #222;
+  }
 
 .hover-topink {
     position: relative;
