@@ -31,6 +31,10 @@ main {
     min-height: 100vh;
 }
 
+[lang="ja"] {
+    font-size: 14px; /* Ajuste la taille selon tes besoins */
+}
+
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Playfair Display', serif;*/
 
@@ -58,6 +62,8 @@ font-family: 'Playfair Display', serif;*/
 
 .nav_container_pc .links ul {
     display: flex;
+    align-items: center; /* Assure l'alignement vertical */
+
 }
 
 .nav_container_pc li {
@@ -82,6 +88,30 @@ font-family: 'Playfair Display', serif;*/
 .nav_container_pc .links p {
     color: black;
     transition: all 0.1s ease;
+}
+
+.nav_container_pc .links .lang_button {
+    background: #d29898;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    margin-bottom: 0; /* Enlève le margin-bottom qui posait problème */
+    height: 40px; /* Ajuste la hauteur pour qu'il corresponde aux liens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px; /* Ajuste selon la longueur du plus grand texte */
+    text-align: center;
+}
+
+.nav_container_pc .links .lang_button:hover {
+    background: #b56b6b;
+    transform: scale(1.05);
 }
 
 .nav_container_pc .nav-text {
@@ -110,6 +140,8 @@ font-family: 'Playfair Display', serif;*/
 .nav_container_pc .logo span {
     color: black;
 }
+
+
 
 /* MAIN */
 
@@ -344,25 +376,8 @@ h1 {
 .about_text {
     text-align: left;
     /* Alignement du texte à gauche pour meilleure lisibilité */
+    transition: opacity 0.5s ease-in-out;
 }
-
-.about-details {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    padding-left: 3.3em;
-}
-
-.about_container ul {
-    padding-left: 4em;
-}
-
-.about_container li {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-}
-
 
 .viewmore {
     width: 300px;
@@ -1018,7 +1033,7 @@ h1 {
   
   #myBtn img:hover {
     /* opacity: 0.5; */
-    background-color: #cf1516;
+    background-color: #d29898;
     transition: all ease-in-out 250ms;
   }
 
@@ -1026,7 +1041,7 @@ h1 {
 
 
 .footer {
-    background-color: #cf1516; /* Couleur rose */
+    background-color: #d29898; /* Couleur rose */
     color: white;              /* Texte blanc */
     text-align: center;        /* Centrer le texte */
     padding: 2em 0;            /* Espacement vertical */
@@ -1120,11 +1135,36 @@ h1 {
         margin: 0 10px;
     }
 
+    .overlay .lang_button {
+        background: transparent;
+        /* color: white; */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        border: none;
+        /* padding: 10px 15px; */
+        /* border-radius: 15px; */
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s;
+        height: 35px; /* Ajuste la hauteur pour qu'il corresponde aux liens */
+        /* align-items: center;
+        justify-content: center;
+        text-align: center; */
+        margin-right: 15px;
+
+    }
+    
+    .overlay .lang_button:hover {
+        /* background: #b56b6b; */
+        transform: scale(1.05);
+    }
+
     .overlay {
         position: relative;
-        display: inline-block;
+        display: flex;
+        align-items: center;
         margin-right: 0;
         padding: 0;
+        height: auto;
     }
 
     .overlaytext {
@@ -1199,6 +1239,8 @@ h1 {
         transition: all 0.3s;
     }
 
+    
+
     /* HOME CONTAINER */
 
     .home_container {
@@ -1255,25 +1297,14 @@ h1 {
 @media only screen and (max-width: 992px) {
     /* ABOUT ME */
     .about_container {
-        display: none;
-    }
-
-    .about_container_mobile {
-        display: flex;
         flex-direction: column;
-        width: 100%;
+        text-align: center;
         padding: 5em 20px 3em;
     }
 
-    .about_container_mobile .about_title {
-        font-size: 3rem;
-        text-align: center;
-        padding: 0;
-    }
-
-    .about_container_mobile .hr_line {
+    .about_container .hr_line {
         display: block;
-        width: 100%;
+        max-width: 100%;
         height: 1px;
         border: 0;
         border-top: 2px solid #d29898;
@@ -1281,65 +1312,54 @@ h1 {
         padding: 0;
     }
 
-    .about_container_mobile .wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #fff;
-        border-radius: 35px;
-        background-color: #fff;
-        padding: 30px;
-    }
-
-    .about_container_mobile .img_container {
-        margin: 0 auto;
-        position: relative;
-        padding: 0;
-        height: 500px;
-        width: 300px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about_container_mobile .avatar {
-        width: 200px;
-    }
-
-    .about_container_mobile .about_subtitle {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.2rem;
+    .about_title {
+        font-size: 3rem;
         text-align: center;
         padding: 0;
     }
 
-    .about_container_mobile .about_text {
+    .about_subtitle {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1rem;
+        font-size: 19px;
+        text-align: center;
+        padding: 0;
+    }
+
+   .about_text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
         padding: 0;
         text-align: justify;
+        /* padding: 20px; */
+        padding-top: 30px;
+    }
+
+    .about_container .right .wrapper {
+        width: 100%;
         padding: 20px;
     }
 
-    .about_container_mobile .about-details {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.2rem;
-        text-align: center;
-        padding: 0;
+    .about_container .right {
+        width: 100%;
     }
 
-    .about_container_mobile ul {
-        padding: 0;
-        padding: 30px;
+    .about_container .left {
+        order: 2; /* Avatar en bas */
+        display: flex;
+        justify-content:20px center;
+        align-items: center;
+        margin-top: 150px;
+        margin-bottom: 7em;
     }
 
-    .about_container_mobile li {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
+    .about_container .left .img_container {
+        width: 250px; /* Réduit la taille de l'image */
+        height: 250px;
     }
 
+    .about_container .left .avatar {
+        width: 80%;
+    }
     .viewmore {
         width: 100%;
         font-size: 18px;

@@ -335,3 +335,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+//traduction EN/JP 
+const translations = {
+  en: {
+    title: "From Paris, France. 🇫🇷<br> Based in Fukuoka, Japan. 🇯🇵",
+    description: `My name is Ashley and I am a web developer.<br>
+      I am currently working as a web developer in a Japanese company that owns several e-commerce shops.
+      <br><br>
+      During my seven years in Japan, I mostly worked in the sectors of customer service (sales representative) and translation.<br><br>
+      I decided it was time for a career change in 2021, therefore I began studying web programming.
+      I've always been creative and an excellent problem solver with high communication skills, and I believe it's one of the many qualities
+      required to thrive in IT. I am always trying to think outside the box and I am still learning new things, especially in web development and I really enjoy this new career change !`,
+    button: "🇯🇵"
+  },
+  ja: {
+    title: "🇫🇷フランス・パリ出身で、<br>福岡市に拠点を置いています。🇯🇵",
+    description: `私はAshleyと申します。現在、日本の企業でコーダとして働いており、複数のECサイトの運営に携わっています。<br><br>
+      日本に来てから7年間は、主にカスタマーサービス（販売員・営業）や翻訳の仕事をしていましたが、2021年にキャリアチェンジを決意し、プログラミングの勉強を始めました。<br><br>
+      もともと創造力があり、問題解決が得意で、コミュニケーション能力も高い方だと自負しています。これらのスキルはIT業界で活躍する上でとても重要だと感じています。
+      常に新しい視点で物事を考えることを大切にしており、特にウェブ開発の分野では日々学ぶことが尽きません。この新しいキャリアにとてもやりがいを感じ、楽しく仕事をしています！`,
+    button: "🇬🇧"
+  }
+};
+
+let currentLang = "en";
+
+// Sélectionner tous les boutons de langue
+const langButtons = document.querySelectorAll(".lang_button");
+
+// Fonction pour changer la langue
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "ja" : "en";
+
+  // Appliquer la traduction
+  document.getElementById("about_subtitle").style.opacity = "0";
+  document.getElementById("about_text").style.opacity = "0";
+
+  setTimeout(() => {
+    document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
+    document.getElementById("about_text").innerHTML = translations[currentLang].description;
+
+    // Mettre à jour TOUS les boutons de langue
+    langButtons.forEach(button => {
+      button.innerHTML = translations[currentLang].button;
+    });
+
+    // Effet de fade-in
+    document.getElementById("about_subtitle").style.opacity = "1";
+    document.getElementById("about_text").style.opacity = "1";
+  }, 300);
+}
+
+// Ajouter l'événement à TOUS les boutons
+langButtons.forEach(button => {
+  button.addEventListener("click", toggleLanguage);
+});
