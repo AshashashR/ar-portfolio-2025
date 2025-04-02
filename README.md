@@ -44,6 +44,10 @@ revoir le hamburger button OK
 
 rajouter 3 boutons pour la categorie work coding web design promotion OK
 
+quand je rafraichis la page, il faut que la langue reste la meme
+
+bouton langue toujours visible meme quand modal est ouverte
+
 
 コーディング coding
 販促物デザイン promotional design

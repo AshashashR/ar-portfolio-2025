@@ -32,15 +32,15 @@ function openNav() {
   // Ajoute ou enlève la classe "open" pour transformer l'icône du hamburger en X
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.toggle("open");
-  
+
   // Ajouter un événement sur chaque lien pour fermer le menu quand l'utilisateur clique dessus
   var links = document.querySelectorAll(".links-small a");
-  links.forEach(function(link) {
-      link.addEventListener("click", function() {
-          // Ferme le menu en enlevant la classe "visible" et le "open" sur l'icône
-          menu.classList.remove("visible");
-          hamburger.classList.remove("open");
-      });
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      // Ferme le menu en enlevant la classe "visible" et le "open" sur l'icône
+      menu.classList.remove("visible");
+      hamburger.classList.remove("open");
+    });
   });
 }
 window.onscroll = function () {
@@ -99,11 +99,51 @@ document.addEventListener("DOMContentLoaded", () => {
   hiddenElements.forEach((el) => observer.observe(el));
 });
 
-//Modal window
+/*works category button*/
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryLinks = document.querySelectorAll(".work__category a");
+  const worksItems = document.querySelectorAll(".work_item");
+  const defaultCategory = "coding"; // Catégorie par défaut
+
+  function filterWorks(category) {
+    worksItems.forEach((item) => {
+      item.style.display = item.getAttribute("data-category").includes(category)
+        ? "block"
+        : "none";
+    });
+
+    // Mettre à jour l'état visuel des liens de catégorie
+    categoryLinks.forEach((link) => {
+      if (link.getAttribute("data-category") === category) {
+        link.classList.add("active"); // Ajoute une classe pour styliser la catégorie active
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  categoryLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const category = link.getAttribute("data-category");
+      filterWorks(category);
+    });
+  });
+
+  // Sélectionner automatiquement la catégorie "coding" au chargement
+  const defaultLink = document.querySelector(
+    `.work__category a[data-category="${defaultCategory}"]`
+  );
+  if (defaultLink) {
+    filterWorks(defaultCategory);
+  }
+});
+
+//Modal window WORK section
 document.addEventListener("DOMContentLoaded", () => {
   const projects = document.querySelectorAll(".work_item");
   const modal = document.getElementById("modal");
-  const modalTitle = document.getElementById("modal-title");
+  // const modalTitle = document.getElementById("modal-title");
   const modalTitleLink = document.getElementById("modal-title-link");
   const modalSubtitle = document.getElementById("modal-subtitle");
   const modalDescription = document.getElementById("modal-description");
@@ -112,12 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModal = document.querySelector(".close");
   const modalVideoContainer = document.getElementById("modal-video-container");
   const modalVideo = document.getElementById("modal-video");
-  const modalVideoSource = document.getElementById("modal-video-source");
+  // const modalVideoSource = document.getElementById("modal-video-source");
   const prevButton = document.querySelector(".prev");
   const nextButton = document.querySelector(".next");
 
   let currentIndex = 0;
   let slides = [];
+  
 
   function showSlide(index) {
     slides.forEach((slide) => slide.classList.remove("active"));
@@ -136,8 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   projects.forEach((project) => {
     project.addEventListener("click", () => {
-      const titleLink = project.getAttribute("data-title-link");
-      const description = project.getAttribute("data-description");
+      // const titleLink = project.getAttribute("data-title-link");
+      // const description = project.getAttribute("data-description");
       const imageSources = project.getAttribute("data-images")
         ? project.getAttribute("data-images").split(",")
         : [];
@@ -145,6 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const imageSrc = project.getAttribute("data-image");
       const link = project.getAttribute("data-link");
       let videoUrl = project.getAttribute("data-video"); // Récupérer la vidéo
+
+      const projectIndex = project.getAttribute("data-index"); // Assure-toi que chaque projet ait un 'data-index'
+
+      const titleKey = `project_title_${projectIndex}`;
+      const descriptionKey = `project_description_${projectIndex}`;
+
+      const titleLink = translations[currentLang][titleKey];
+      const description = translations[currentLang][descriptionKey];
 
       modalTitleLink.textContent = titleLink;
       modalTitleLink.href = link;
@@ -245,47 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*works category button*/
-document.addEventListener("DOMContentLoaded", () => {
-  const categoryLinks = document.querySelectorAll(".work__category a");
-  const worksItems = document.querySelectorAll(".work_item");
-  const defaultCategory = "coding"; // Catégorie par défaut
-
-  function filterWorks(category) {
-    worksItems.forEach((item) => {
-      item.style.display = item.getAttribute("data-category").includes(category)
-        ? "block"
-        : "none";
-    });
-
-    // Mettre à jour l'état visuel des liens de catégorie
-    categoryLinks.forEach((link) => {
-      if (link.getAttribute("data-category") === category) {
-        link.classList.add("active"); // Ajoute une classe pour styliser la catégorie active
-      } else {
-        link.classList.remove("active");
-      }
-    });
-  }
-
-  categoryLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const category = link.getAttribute("data-category");
-      filterWorks(category);
-    });
-  });
-
-  // Sélectionner automatiquement la catégorie "coding" au chargement
-  const defaultLink = document.querySelector(
-    `.work__category a[data-category="${defaultCategory}"]`
-  );
-  if (defaultLink) {
-    filterWorks(defaultCategory);
-  }
-});
-
-
 //Modal window personal work
 document.addEventListener("DOMContentLoaded", () => {
   const portfolioProjects = document.querySelectorAll(".portfolio_item");
@@ -298,11 +306,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   portfolioProjects.forEach((project) => {
     project.addEventListener("click", () => {
-      const titleLink = project.getAttribute("data-title-link");
-      const description = project.getAttribute("data-description");
+      // const titleLink = project.getAttribute("data-title-link");
+      // const description = project.getAttribute("data-description");
       const subtitle = project.getAttribute("data-subtitle");
       const imageSrc = project.getAttribute("data-image");
       const link = project.getAttribute("data-link");
+
+      const portfolioIndex = project.getAttribute("data-index"); // Assure-toi que chaque projet ait un 'data-index'
+
+      const titleKey = `portfolio_title_${portfolioIndex}`;
+      const descriptionKey = `portfolio_description_${portfolioIndex}`;
+
+      const titleLink = translations[currentLang][titleKey];
+      const description = translations[currentLang][descriptionKey];
 
       modalTitleLink.textContent = titleLink;
       modalTitleLink.href = link;
@@ -310,7 +326,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modalDescription.textContent = description;
       modalImage.src = imageSrc; // Change l'image
       modalImage.style.display = "block";
-
 
       // Assure que la modal s'affiche à chaque clic
       modal.style.display = "flex";
@@ -336,117 +351,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-//traduction EN/JP 
-const translations = {
-  ja: {
-    title: "🇫🇷フランス・パリ出身で、<br>福岡市に拠点を置いています。🇯🇵",
-    description: `私はAshleyと申します。現在、日本の企業でコーダとして働いており、複数のECサイトの運営に携わっています。<br><br>
-      日本に来てから7年間は、主にカスタマーサービス（販売員・営業）や翻訳の仕事をしていましたが、2021年にキャリアチェンジを決意し、プログラミングの勉強を始めました。<br><br>
-      もともと創造力があり、問題解決が得意で、コミュニケーション能力も高い方だと自負しています。これらのスキルはIT業界で活躍する上でとても重要だと感じています。
-      常に新しい視点で物事を考えることを大切にしており、特にウェブ開発の分野では日々学ぶことが尽きません。この新しいキャリアにとてもやりがいを感じ、楽しく仕事をしています！`,
-    button: "🇬🇧",
-    coding: "コーディング",
-    promotion: "販促物デザイン",
-    video: "動画編集"
-  },
-
-  en: {
-    title: "From Paris, France. 🇫🇷<br> Based in Fukuoka, Japan. 🇯🇵",
-    description: `My name is Ashley and I am a web developer.<br>
-      I am currently working as a web developer in a Japanese company that owns several e-commerce shops.
-      <br><br>
-      During my seven years in Japan, I mostly worked in the sectors of customer service (sales representative) and translation.<br><br>
-      I decided it was time for a career change in 2021, therefore I began studying web programming.
-      I've always been creative and an excellent problem solver with high communication skills, and I believe it's one of the many qualities
-      required to thrive in IT. I am always trying to think outside the box and I am still learning new things, especially in web development and I really enjoy this new career change !`,
-    button: "🇯🇵",
-    coding: "Coding",
-    promotion: "Promotional Design",
-    video: "Video Editing"
-  }
-};
-
-let currentLang = "ja";  // Définit la langue par défaut en japonais
-
-// Sélectionner TOUS les boutons de langue (PC et mobile)
-const langButtons = document.querySelectorAll(".lang_button");
-
-// Fonction pour changer la langue
-function toggleLanguage() {
-  currentLang = currentLang === "ja" ? "en" : "ja";  // Basculer entre "ja" et "en"
-
-  // Appliquer la traduction
-  document.getElementById("about_subtitle").style.opacity = "0";
-  document.getElementById("about_text").style.opacity = "0";
-
-  setTimeout(() => {
-    document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
-    document.getElementById("about_text").innerHTML = translations[currentLang].description;
-
-    // Mettre à jour les catégories de travail
-    document.querySelectorAll('.work__category a').forEach(link => {
-      const category = link.getAttribute('data-category');
-      link.innerHTML = translations[currentLang][category];  // Mettre à jour le texte des catégories
-    });
-
-    // Mettre à jour les classes du body (ou un autre parent)
-    if (currentLang === "en") {
-      document.body.classList.add("english");  // Ajouter la classe pour l'anglais
-      document.body.classList.remove("japanese");  // Retirer la classe pour le japonais
-    } else {
-      document.body.classList.add("japanese");  // Ajouter la classe pour le japonais
-      document.body.classList.remove("english");  // Retirer la classe pour l'anglais
-    }
-
-    // Mettre à jour TOUS les boutons de langue (version PC et mobile)
-    langButtons.forEach(button => {
-      if (button.id === "lang-toggle-pc") {
-        // Sur PC, on affiche les drapeaux 🇬🇧 ou 🇯🇵
-        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; 
-      } else if (button.id === "lang-toggle-mobile") {
-        // Sur mobile, afficher le drapeau 🇯🇵 ou 🇬🇧
-        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; 
-      }
-    });
-
-    // Effet de fade-in
-    document.getElementById("about_subtitle").style.opacity = "1";
-    document.getElementById("about_text").style.opacity = "1";
-  }, 300);
-}
-
-// Ajouter l'événement pour TOUS les boutons de langue
-langButtons.forEach(button => {
-  button.addEventListener("click", toggleLanguage);
-});
-
-// Initialiser la langue à "ja" (japonais) lors du chargement
-window.addEventListener('load', function() {
-  document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
-  document.getElementById("about_text").innerHTML = translations[currentLang].description;
-
-  // Mettre à jour les boutons au début
-  langButtons.forEach(button => {
-    if (button.id === "lang-toggle-pc") {
-      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";  // Afficher les drapeaux sur PC
-    } else if (button.id === "lang-toggle-mobile") {
-      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";  // Afficher les drapeaux sur mobile
-    }
-  });
-
-  // Mettre à jour les catégories dès le début
-  document.querySelectorAll('.work__category a').forEach(link => {
-    const category = link.getAttribute('data-category');
-    link.innerHTML = translations[currentLang][category];  // Mettre à jour le texte des catégories
-  });
-
-  // Appliquer la classe initiale
-  if (currentLang === "en") {
-    document.body.classList.add("english");
-    document.body.classList.remove("japanese");
-  } else {
-    document.body.classList.add("japanese");
-    document.body.classList.remove("english");
-  }
-});

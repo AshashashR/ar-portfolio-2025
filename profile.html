@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="ash_logo.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -25,10 +26,10 @@
 
             <div class="links">
                 <ul>
+                    <!-- <li></li> -->
                     <li><a href="index.html" class="home-hover">
                             <p class="nav-text">home</p>
                         </a></li>
-
                     <li><a href="#about" class="about-hover">
                             <p class="nav-text">about</p>
                         </a></li>
@@ -39,6 +40,7 @@
                             <p class="nav-text">personal work</p>
                         </a></li>
                 </ul>
+                <button class="lang_button" id="lang-toggle-pc" data-lang="pc">🇬🇧</button>
             </div>
         </nav>
 
@@ -50,17 +52,19 @@
         <img src="ash_logo.jpg" alt="Logo" class="logo">
 
         <div class="overlay">
-            <span class="hamburger" onclick="openNav()">≡</span>
+            <button class="lang_button" id="lang-toggle-mobile" data-lang="mobile">🇬🇧</button>
+            <span class="hamburger" onclick="openNav()"></span>
             <!-- overlay -->
             <div>
                 <div class="overlaytext hide" id="toggle">
                     <ul class="links-small">
-                        <li><a href="#home" class="link">top</a></li>
+                        <li><a href="index.html" class="link">home</a></li>
                         <li><a href="#about" class="link">about</a></li>
                         <li><a href="#work" class="link">work</a></li>
                         <li><a href="#portfolio" class="link">personal work</a></li>
                         <!-- <li><a href="#contact" class="link">contact me</a></li> -->
                     </ul>
+
                 </div>
             </div>
         </div>
@@ -70,28 +74,28 @@
         <section class="profile" id="profile">
             <div class="profile__cont inner">
                 <h1 class="profile__title title">profile</h1>
+                <div class="hr_line"></div>
                 <div class="profile__list">
                     <div class="profile__img">
-                        <img src="img/profile.png" alt="" width="300px"/>
+                        <img src="img/profile.png" alt="" width="300px" />
                     </div>
                     <div class="profile__wrap">
                         <div class="profile__textbox">
                             <p class="profile__text">
-                                ご覧いただきありがとうございます！<br />
-                                東京・神奈川を拠点にフリーランスでWeb制作を行っております、秋山千尋です。
+                                ご覧いただきありがとうございます！<br>
+                                日本の企業でコーダとして働いており、複数のECサイトの運営に携わっております、Ashleyと申します。
                             </p>
                             <p class="profile__text">
-                                3年のエンジニア経験を活かしたスピーディなコーディングが可能です。
+                                日本に来てから7年間は、主にカスタマーサービス（販売員・営業）や翻訳の仕事をしていましたが、<br>
+                                2021年にキャリアチェンジを決意し、プログラミングの勉強を始めました。
                             </p>
                             <p class="profile__text">
-                                丁寧なコミュニケーション・クイックレスポンスを第一に心がけています。<br />
-                                お客様・パートナー様の事業成長につながるよう<br />
-                                誠心誠意 対応させていただきます。
+                                もともと創造力があり、問題解決が得意で、コミュニケーション能力も高い方だと自負しています。<br>
+                                これらのスキルはIT業界で活躍する上でとても重要だと感じています。<br>
+                                常に新しい視点で物事を考えることを大切にしており、特にウェブ開発の分野では日々学ぶことが尽きません。<br><br>
+                                この新しいキャリアにとてもやりがいを感じ、楽しく仕事をしています！
                             </p>
                         </div>
-                        <!-- <div class="profile__btn">
-                        <a href="" class="btn">もっと見る</a>
-                      </div> -->
                     </div>
                 </div>
             </div>
@@ -100,68 +104,84 @@
         <section class="history">
             <div class="history__cont inner">
                 <h1 class="profile__title title">history</h1>
+                <div class="hr_line"></div>
                 <div class="history__line">
-                    <div class="history__left">1995年</div>
+                    <div class="history__left">1990年</div>
                     <div class="history__right">
-                        茨城県出身、4人きょうだいの長女として生まれる
+                        パリ・フランス生まれ育ち
                         <p>
-                            祖父が大工、両親がパティシエという、生粋のものづくり家系で育ちました。
-                            幼少期からお菓子作り、手芸、デッサン、ミシンなどさまざまなものづくりを楽しんでいたこともあり、当時からものづくりが私の天職だと確信していました。
+                            幼い頃から創作に強い関心を持っていました。小さい頃はよく絵を描き、漫画のさまざまなシナリオを考えていました。
+                            絵に対する情熱を深めたいと思い、中学卒業後、美術系の高校に進学しました。
                         </p>
                     </div>
                 </div>
                 <div class="history__line">
-                    <div class="history__left">2013年</div>
+                    <div class="history__left">2009年</div>
                     <div class="history__right">
-                        上智大学文学部　入学
+                        パリ・シテ大学（旧パリ大学、旧パリ・ディドロパリ第七大学）<br>東アジア言語文化学部日本語科　入学
                         <p>
-                            当時は将来何になりたい！という夢がなく、西洋の文化や歴史に興味があったというのもあり、フランス文学を専攻していました。在学中はバイトに明け暮れ、老舗フルーツパーラーやレストランでひたすらパフェやハンバーグを作っていました。
+                            美術高校を卒業した後、将来何をしたいのかはっきりと分かりませんでした。<br>
+                            絵を描くことが「情熱」というよりも「趣味」に近いものだと気づきましたが、それでも「何かを創りたい」という気持ちは変わりませんでした。
+                            高校時代には独学でギターを始め、音楽に強い興味を持つようになりました。そこで、音楽を学び、楽典の基礎を身につけるために、パリ第8大学の音楽学科に入学しました。
+                            しかし、結局そこには1年しか在籍しませんでした。<br><br>
+                            その後、バイトに明け暮れながら、何をすべきか分からず迷っていましたが、私の絵に対する興味は、幼い頃から親しんできた漫画やアニメを通じて日本と深く結びついていました。<br>
+                            そして、私は決意しました―― <br>
+                            「日本語を学びたい！もっと日本の文化についてもっと知りたい！」 <br><br>
+                            こうして、パリ・シテ大学 東アジア言語文化学部日本語科に進学しました。<br>
                         </p>
                     </div>
                 </div>
                 <div class="history__line">
-                    <div class="history__left">2017年</div>
+                    <div class="history__left">2015年</div>
                     <div class="history__right">
-                        上智大学文学部卒業、福岡のIT企業でエンジニアになる
+                        パリ・シテ大学 社会人間学部 東アジア言語文化学科 日本語専攻 卒業、<br>日本へのワーキングホリデー決定
                         <p>
-                            新卒で都内の会社に就職しましたが、福岡での3ヶ月の研修が楽しすぎて自ら希望して福岡配属になりました。C#エンジニアとして販売管理システムの開発・改修を行っていました。
-                            文系出身で苦労もありましたが、得意のキャッチアップ力を活かし、会社のメイン商品の開発案件に参画したり、
-                            有志で参加したハッカソンでは優秀賞を獲得しました。
+                            2012年に学士号を取得した後、進学するかどうか迷っていました。<br>
+                            最終的に、近所のスーパーでアルバイトをしながら、日本でのワーキングホリデーに向けて貯金することに決めました。<br>
+                            <br>
+                            そして、2015年2月、ついに日本へ旅立ち、東京での生活をスタートさせました。<br>
+                            長年の準備を経て、ついに『日本で暮らす』という夢が叶いました！
+                            <br>
+                            東京での最初の数年間は、さまざまな仕事を経験しました。
+                            家庭教師としてフランス語を教えたり、クレープ屋さんでウェイトレスをしたり、日本在住の外国人向けの不動産会社で営業職を務めたりしました。
                         </p>
                     </div>
                 </div>
                 <div class="history__line">
-                    <div class="history__left">2020年</div>
+                    <div class="history__left">2021年</div>
                     <div class="history__right">
-                        雀荘店員兼デザイナーとして働く
+                        Web制作アシスタントとして働く
                         <p>
-                            エンジニアで初めてPCでのものづくりを経験し、魅了されました。特に見た目を作るところに興味が湧き、デザインの仕事に挑戦しました。
-                            麻雀店勤務の傍ら、<br />
-                            ・麻雀店のPOPやポスターデザイン、<br />
-                            ・HPのSEO・MEO対策、<br />
-                            ・全国麻雀組合の紹介動画や啓発ポスターの制作、<br />
-                            ・知人の紹介でイベントのタペストリー制作<br />
-                            など幅広い業務を経験しました。
+                            以前から、日本語・英語・フランス語を生かせる仕事に就きたいと考えていました。<br>
+                            しかし、2020年のコロナ禍の影響で、多くの企業が閉業を余儀なくされ、とくに観光業界は大きな打撃を受けました。そのため、将来について真剣に考え直し、プログラミングの道へ進むことを決意しました。
+                            <br>
+                            2021年2月、プログラミングスクールに入学し、ゼロから学習をスタートしました。学ぶうちにフロントエンドに魅力を感じ、この分野でキャリアを積むことを決意しました。<br>
+
+                            そして、2021年8月に卒業し、同年11月にEC業界でWeb制作アシスタントとして働き始めました。<br>
                         </p>
                     </div>
                 </div>
                 <div class="history__line">
-                    <div class="history__left">2024年</div>
+                    <div class="history__left">2022年</div>
                     <div class="history__right">
-                        Web制作コーダーとして活動
+                        Webコーダーとして活動
                         <p>
-                            バックエンドエンジニアやデザイナーなど、さまざまな仕事を経験する中で、PCを使ったものづくりかつ、見た目を作る仕事が好きだと知ることができました。そんな中でWeb制作と出会い、現在はこの仕事が天職であると感じています。
+                            EC業界でさまざまな仕事を経験する中で、PCを使ったものづくりかつ、見た目を作る仕事が好きだと知ることができました。<br>
+                            そこで、より多くの知識を深め、コーディングやプログラミングのスキルを向上させるため、Web制作会社への転職を決意しました。
+                            しかし、次第に東京での生活に息苦しさを感じるようになり、新たな環境を求めていたところ、福岡のEC企業からコーダーとしての内定をいただき、2022年12月に福岡へ移住しました。
                         </p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
-        <p>© Ashley R.</p>
+    <footer class="footer">
+        <p>&copy; 2025 Ashley R. - All rights reserved.</p>
+        <p>Created with ❤️ in Japan</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="translation.js"></script>
 
 </body>
 
