@@ -1141,7 +1141,7 @@ h1 {
     }
 
     .about_title {
-        font-size: 3rem;
+        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
         text-align: center;
         padding: 0;
     }
@@ -1213,6 +1213,12 @@ h1 {
         padding: 0;
     }
 
+    .work_title {
+        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
+        text-align: center;
+        padding: 0;
+    }
+
     .work_grid {
         width: 100%;
         margin-top: 20px;
@@ -1246,6 +1252,12 @@ h1 {
         padding: 0;
     }
 
+    .portfolio_title {
+        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
+        text-align: center;
+        padding: 0;
+    }
+
     .portfolio_grid {
         width: 100%;
         margin-top: 20px;
@@ -1264,6 +1276,12 @@ h1 {
         flex-direction: column;
         padding-left: 0;
         padding-bottom: 3em;
+    }
+
+    .contact_title {
+        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
+        text-align: center;
+        padding: 0;
     }
 
     .contact_container .hr_line {

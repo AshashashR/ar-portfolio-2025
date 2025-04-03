@@ -82,6 +82,8 @@ smoothScroll.forEach((btn) => {
   });
 });
 
+
+
 //ページのスクロールに合わせてsectionが表示される
 document.addEventListener("DOMContentLoaded", () => {
   const hiddenElements = document.querySelectorAll(".hidden");

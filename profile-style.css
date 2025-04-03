@@ -10,6 +10,7 @@
 .title {
     line-height: 1.2;
     font-weight: 500;
+    margin-bottom: 50px;
 }
 
 @media screen and (max-width: 767px) {
@@ -21,7 +22,7 @@
 
 /* Profile Section */
 .profile {
-    padding-top: 15em;
+    padding-top: 11em;
     padding-bottom: 6.875rem;
 }
 
@@ -159,9 +160,9 @@
 
 .history__right p {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: normal;
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
 }
 
@@ -175,4 +176,20 @@
         margin: 1em 0;
         padding: 0;
     }
+}
+
+.english .profile__text, .english [data-key] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px; 
+}
+
+[data-key],body.japanese .profile__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+/* Effet de transition plus fluide */
+.profile__text {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    min-height: 80px; /* Ajuste selon la taille de ton texte pour éviter les sauts */
 }
