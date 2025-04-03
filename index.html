@@ -13,6 +13,16 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <title>Ashley R. | Web Developer</title>
+
+    <script>
+        // Vérifier l'authentification avant de charger la page
+        window.onload = function() {
+            if (localStorage.getItem("authenticated") !== "true") {
+                // Si l'utilisateur n'est pas authentifié, rediriger vers la page login
+                window.location.href = "login.html";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -23,7 +33,7 @@
 
 
         <nav class="nav_container_pc">
-            <img src="ash_logo.jpg" alt="Logo" class="logo">
+            <a href="index.html"><img src="ash_logo.jpg" alt="Logo" class="logo"></a>
 
             <div class="links">
                 <ul>
@@ -50,7 +60,7 @@
 
     <!-- MOBILE NAVBAR -->
     <nav class="nav_container" id="navbar">
-        <img src="ash_logo.jpg" alt="Logo" class="logo">
+        <a href="index.html" class="logo"><img src="ash_logo.jpg" alt="Logo"></a>
 
         <div class="overlay">
             <button class="lang_button" id="lang-toggle-mobile" data-lang="mobile">🇬🇧</button>
@@ -467,6 +477,8 @@
         <p>&copy; 2025 Ashley R. - All rights reserved.</p>
         <p>Created with ❤️ in Japan</p>
     </footer>
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <script src="translation.js"></script>

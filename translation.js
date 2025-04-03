@@ -204,94 +204,73 @@ const translations = {
   },
 };
 
-let currentLang = "ja"; // Définit la langue par défaut en japonais
+// 🔹 Récupérer la langue sauvegardée ou utiliser "ja" par défaut
+let currentLang = localStorage.getItem("selectedLanguage") || "ja";
 
-// Sélectionner TOUS les boutons de langue (PC et mobile)
+// 📌 Sélectionner TOUS les boutons de langue (PC et mobile)
 const langButtons = document.querySelectorAll(".lang_button");
 
-// Fonction pour changer la langue
+// 📌 Fonction pour changer la langue avec transition fluide
 function toggleLanguage() {
-  currentLang = currentLang === "ja" ? "en" : "ja"; // Basculer entre "ja" et "en"
+  currentLang = currentLang === "ja" ? "en" : "ja"; // Bascule entre "ja" et "en"
+  localStorage.setItem("selectedLanguage", currentLang); // Sauvegarde la langue
 
-  // Appliquer la traduction
+  // Appliquer une transition avant de changer le texte
   document.getElementById("about_subtitle").style.opacity = "0";
   document.getElementById("about_text").style.opacity = "0";
 
   setTimeout(() => {
-    document.getElementById("about_subtitle").innerHTML =
-      translations[currentLang].title;
-    document.getElementById("about_text").innerHTML =
-      translations[currentLang].description;
+    // 🔹 Mettre à jour les textes
+    document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
+    document.getElementById("about_text").innerHTML = translations[currentLang].description;
 
-    // Mettre à jour les catégories de travail
+    // 🔹 Mettre à jour les catégories de travail
     document.querySelectorAll(".work__category a").forEach((link) => {
       const category = link.getAttribute("data-category");
-      link.innerHTML = translations[currentLang][category]; // Mettre à jour le texte des catégories
+      link.innerHTML = translations[currentLang][category];
     });
 
-    // Mettre à jour les classes du body (ou un autre parent)
-    if (currentLang === "en") {
-      document.body.classList.add("english"); // Ajouter la classe pour l'anglais
-      document.body.classList.remove("japanese"); // Retirer la classe pour le japonais
-    } else {
-      document.body.classList.add("japanese"); // Ajouter la classe pour le japonais
-      document.body.classList.remove("english"); // Retirer la classe pour l'anglais
-    }
+    // 🔹 Appliquer la classe de langue
+    document.body.classList.toggle("english", currentLang === "en");
+    document.body.classList.toggle("japanese", currentLang === "ja");
 
-    // Mettre à jour TOUS les boutons de langue (version PC et mobile)
+    // 🔹 Mettre à jour TOUS les boutons de langue
     langButtons.forEach((button) => {
-      if (button.id === "lang-toggle-pc") {
-        // Sur PC, on affiche les drapeaux 🇬🇧 ou 🇯🇵
-        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";
-      } else if (button.id === "lang-toggle-mobile") {
-        // Sur mobile, afficher le drapeau 🇯🇵 ou 🇬🇧
-        button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";
-      }
+      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";
     });
 
-    // Effet de fade-in
+    // Réactiver l'opacité avec transition
     document.getElementById("about_subtitle").style.opacity = "1";
     document.getElementById("about_text").style.opacity = "1";
   }, 300);
 }
 
-// Ajouter l'événement pour TOUS les boutons de langue
-// Ajouter l'événement de changement de langue à tous les boutons de langue
+// 📌 Ajouter l'événement de changement de langue aux boutons
 langButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    e.stopPropagation(); // Empêche la propagation du clic pour ne pas fermer la modal
-    toggleLanguage(); // Change la langue
+    e.stopPropagation();
+    toggleLanguage();
   });
 });
 
-// Initialiser la langue à "ja" (japonais) lors du chargement
-window.addEventListener("load", function () {
-  document.getElementById("about_subtitle").innerHTML =
-    translations[currentLang].title;
-  document.getElementById("about_text").innerHTML =
-    translations[currentLang].description;
-
-  // Mettre à jour les boutons au début
-  langButtons.forEach((button) => {
-    if (button.id === "lang-toggle-pc") {
-      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; // Afficher les drapeaux sur PC
-    } else if (button.id === "lang-toggle-mobile") {
-      button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵"; // Afficher les drapeaux sur mobile
-    }
-  });
+// 📌 Initialiser la langue au chargement de la page
+document.addEventListener("DOMContentLoaded", function () {
+  // Appliquer les textes en fonction de la langue sauvegardée
+  document.getElementById("about_subtitle").innerHTML = translations[currentLang].title;
+  document.getElementById("about_text").innerHTML = translations[currentLang].description;
 
   // Mettre à jour les catégories dès le début
   document.querySelectorAll(".work__category a").forEach((link) => {
     const category = link.getAttribute("data-category");
-    link.innerHTML = translations[currentLang][category]; // Mettre à jour le texte des catégories
+    link.innerHTML = translations[currentLang][category];
   });
 
-  // Appliquer la classe initiale
-  if (currentLang === "en") {
-    document.body.classList.add("english");
-    document.body.classList.remove("japanese");
-  } else {
-    document.body.classList.add("japanese");
-    document.body.classList.remove("english");
-  }
+  // Mettre à jour l'affichage des boutons
+  langButtons.forEach((button) => {
+    button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";
+  });
+
+  // Appliquer la bonne classe au body
+  document.body.classList.toggle("english", currentLang === "en");
+  document.body.classList.toggle("japanese", currentLang === "ja");
 });

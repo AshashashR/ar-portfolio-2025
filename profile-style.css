@@ -18,6 +18,10 @@
         font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
         text-align: center;
     }
+
+    .nav_container_pc {
+        display: none;
+    }
 }
 
 /* Profile Section */
@@ -38,6 +42,10 @@
 @media screen and (max-width: 767px) {
     .profile__list {
         flex-direction: column;
+    }
+
+    .profile {
+        padding-top: 5em; 
     }
 }
 

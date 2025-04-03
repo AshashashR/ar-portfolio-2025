@@ -24,6 +24,25 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+
+//ページのスクロールに合わせてsectionが表示される
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section"); // Sélectionne toutes les sections
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible"); // Ajoute la classe "visible"
+          observer.unobserve(entry.target); // Optionnel : arrête d'observer après l'animation
+        }
+      });
+    }, { threshold: 0.1 }); // 20% de la section visible avant activation
+  
+    sections.forEach(section => observer.observe(section)); // Observe chaque section
+  });
+  
+
+
 //SP版切り替えができるハンバーガーメニュー
 function openNav() {
   var menu = document.getElementById("toggle");
@@ -43,9 +62,10 @@ function openNav() {
     });
   });
 }
-window.onscroll = function () {
-  myFunction();
-};
+
+// window.onscroll = function () {
+//   myFunction();
+// };
 
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
@@ -201,7 +221,7 @@ const translations = {
   },
 };
 
-let currentLang = "ja"; // Langue par défaut
+let currentLang = localStorage.getItem("selectedLanguage") || "ja"; // Récupère la langue stockée ou "ja" par défaut
 
 // 📌 Sélectionner TOUS les boutons de langue (PC & mobile)
 const langButtons = document.querySelectorAll(".lang_button");
@@ -209,11 +229,31 @@ const langButtons = document.querySelectorAll(".lang_button");
 // 📌 Fonction pour changer la langue avec une transition fluide
 function toggleLanguage() {
   currentLang = currentLang === "ja" ? "en" : "ja"; // Bascule entre "ja" et "en"
+  localStorage.setItem("selectedLanguage", currentLang); // 🔹 Sauvegarde la langue sélectionnée
 
   // Appliquer la classe de langue AVANT de changer le texte
   document.body.classList.toggle("english", currentLang === "en");
   document.body.classList.toggle("japanese", currentLang === "ja");
 
+  updateTexts();
+}
+
+// 📌 Fonction pour animer le changement de texte en douceur
+function fadeText(element, newText) {
+  element.style.transition = "opacity 0.3s ease, transform 0.3s ease"; // Ajout transition
+  element.style.opacity = "0";
+  element.style.transform = "translateY(10px)";
+
+  setTimeout(() => {
+    element.innerHTML = newText; // Mise à jour du texte
+    element.offsetHeight; // ⚡ Force le recalcul du DOM
+    element.style.opacity = "1";
+    element.style.transform = "translateY(0)";
+  }, 300); // Attendre avant de changer le texte
+}
+
+// 📌 Fonction pour mettre à jour les textes
+function updateTexts() {
   // 🔹 Mise à jour des textes de la section "Profile"
   document.querySelectorAll(".profile__text").forEach((p, index) => {
     const key = `profile_text_${index + 1}`;
@@ -236,51 +276,18 @@ function toggleLanguage() {
   });
 }
 
-// 📌 Fonction pour animer le changement de texte en douceur
-function fadeText(element, newText) {
-  element.style.transition = "opacity 0.3s ease, transform 0.3s ease"; // Ajout transition
-  element.style.opacity = "0";
-  element.style.transform = "translateY(10px)";
-
-  setTimeout(() => {
-    element.innerHTML = newText; // Mise à jour du texte
-    element.offsetHeight; // ⚡ Force le recalcul du DOM
-    element.style.opacity = "1";
-    element.style.transform = "translateY(0)";
-  }, 300); // Attendre avant de changer le texte
-}
-
 // 📌 Ajouter l'événement de changement de langue à tous les boutons
 langButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.stopPropagation(); // Empêche la propagation du clic pour ne pas fermer la modal
+  button.addEventListener("click", () => {
     toggleLanguage();
   });
 });
 
 // 📌 Initialiser la langue au chargement de la page
 document.addEventListener("DOMContentLoaded", function () {
-  // Appliquer la langue par défaut
-  document.body.classList.add("japanese");
+  // Appliquer la bonne classe de langue
+  document.body.classList.add(currentLang === "ja" ? "japanese" : "english");
 
-  // Appliquer le bon drapeau au bouton de langue
-  langButtons.forEach((button) => {
-    button.innerHTML = currentLang === "ja" ? "🇬🇧" : "🇯🇵";
-  });
-
-  // Charger les textes initiaux de la section "Profile"
-  document.querySelectorAll(".profile__text").forEach((p, index) => {
-    const key = `profile_text_${index + 1}`;
-    if (translations[currentLang][key]) {
-      p.innerHTML = translations[currentLang][key];
-    }
-  });
-
-  // Charger les textes initiaux de la section "History"
-  document.querySelectorAll("[data-key]").forEach((element) => {
-    const key = element.getAttribute("data-key");
-    if (translations[currentLang][key]) {
-      element.innerHTML = translations[currentLang][key];
-    }
-  });
+  updateTexts(); // Charger les textes avec la langue sauvegardée
 });
+

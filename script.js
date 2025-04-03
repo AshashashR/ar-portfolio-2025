@@ -43,9 +43,9 @@ function openNav() {
     });
   });
 }
-window.onscroll = function () {
-  myFunction();
-};
+// window.onscroll = function () {
+//   myFunction();
+// };
 
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
@@ -57,6 +57,10 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+window.onscroll = function () {
+  myFunction();
+};
 
 // ページ内リンクの際にスムーズスクロールになる
 //→その際にページのheaderタグの高さを自動で算出しスクロール位置を調整
@@ -85,21 +89,21 @@ smoothScroll.forEach((btn) => {
 
 
 //ページのスクロールに合わせてsectionが表示される
-document.addEventListener("DOMContentLoaded", () => {
-  const hiddenElements = document.querySelectorAll(".hidden");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section:not(#home)"); // Sélectionne toutes les sections
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible"); // Ajoute la classe "visible"
+        observer.unobserve(entry.target); // Optionnel : arrête d'observer après l'animation
+      }
+    });
+  }, { threshold: 0.1 }); // 10% de la section visible avant activation
 
-  hiddenElements.forEach((el) => observer.observe(el));
+  sections.forEach(section => observer.observe(section)); // Observe chaque section
 });
+
 
 /*works category button*/
 document.addEventListener("DOMContentLoaded", () => {
@@ -140,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     filterWorks(defaultCategory);
   }
 });
+
 
 //Modal window WORK section
 document.addEventListener("DOMContentLoaded", () => {
