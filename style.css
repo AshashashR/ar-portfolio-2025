@@ -834,16 +834,59 @@ section.visible {
     }
 }
 
-/* .home_container, .about_container, .portfolio_container, .work_container,
-.contact_container, footer {
-    display: none;
-} */
 
-/* CONTACT SECTION */
+
+/*/////////// CONTACT SECTION ///////////*/
+
+
 
 .contact_container {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8em;
+    margin-top: 5em;
+    padding-bottom: 8em;
 }
+
+.contact_title {
+    text-align: center;
+    /* padding-bottom: 2em; */
+}
+
+.contact_container .hr_line {
+    display: block;
+    width: 300px;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #d29898;
+    margin: 1em 0;
+    padding-bottom: 1em;
+}
+
+.contact_container .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.contact_container .wrapper img {
+    width: 60px;
+}
+
+.contact_container .mail {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+
 
 /* /////////// BUTTON TO TOP ///////////*/
 
@@ -1299,7 +1342,6 @@ section.visible {
     }
 
     .contact_title {
-        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
         text-align: center;
         padding: 0;
     }
@@ -1316,9 +1358,9 @@ section.visible {
 
     .contact_container .wrapper {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-top: 20px;
         width: 100%;
     }
@@ -1326,6 +1368,13 @@ section.visible {
     .contact_container .wrapper img {
         width: 60px;
     }
+
+    .contact_container .mail {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1280px) {
