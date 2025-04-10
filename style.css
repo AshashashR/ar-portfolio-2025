@@ -869,13 +869,14 @@ section.visible {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 80px;
-    width: 100%;
+    width: 400px;
 }
 
 .contact_container .wrapper img {
     width: 60px;
+    
 }
 
 .contact_container .mail {
@@ -883,7 +884,7 @@ section.visible {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     cursor: pointer;
-    margin-left: 50px;
+    
 }
 
 
@@ -1342,6 +1343,7 @@ section.visible {
     }
 
     .contact_title {
+        font-size: clamp(2.188rem, 0.693rem + 6.378vi, 3.75rem);
         text-align: center;
         padding: 0;
     }
@@ -1386,6 +1388,15 @@ section.visible {
         align-items: center;
         justify-content: center;
     }
+
+    .contact_container .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    
+
 }
 
 @media screen and (max-width: 992px) {
@@ -1393,6 +1404,8 @@ section.visible {
         width: 100%;
         flex-direction: column;
     }
+
+    
 }
 
 @media screen and (min-width: 1200px) {
