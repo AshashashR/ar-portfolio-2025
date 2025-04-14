@@ -769,7 +769,7 @@ section.visible {
     min-height: 100vh;
     margin-bottom: 8em;
     margin-top: 5em;
-    padding-bottom: 8em;
+    /* padding-bottom: 8em; */
 }
 
 .portfolio_title {
@@ -847,7 +847,7 @@ section.visible {
     justify-content: center;
     margin-bottom: 8em;
     margin-top: 5em;
-    padding-bottom: 8em;
+    /* padding-bottom: 8em; */
 }
 
 .contact_title {
