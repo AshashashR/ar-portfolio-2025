@@ -1339,7 +1339,7 @@ section.visible {
         justify-content: center;
         flex-direction: column;
         padding-left: 0;
-        padding-bottom: 3em;
+        /* padding-bottom: 3em; */
     }
 
     .contact_title {
