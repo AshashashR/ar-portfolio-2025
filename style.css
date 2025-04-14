@@ -767,7 +767,7 @@ section.visible {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin-bottom: 8em;
+    margin-bottom: 5em;
     margin-top: 5em;
     /* padding-bottom: 8em; */
 }
@@ -1302,8 +1302,8 @@ section.visible {
         justify-content: center;
         min-height: 100vh;
         padding-left: 0;
-        padding-bottom: 3em;
-        margin-top: 5em;
+        padding-bottom: 0;
+        margin-bottom: 6em;
     }
 
     .portfolio_container .hr_line {
