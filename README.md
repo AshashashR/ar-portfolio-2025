@@ -14,12 +14,3 @@ I will be using this to show case my projects.
 ## Installation
 
 No need to install any software, just open up index.html
-
-
-ce que je dois faire:
-
-
-contact' contact form?
-
-bouton langue toujours visible meme quand modal est ouverte
-
