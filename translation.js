@@ -51,6 +51,9 @@ const translations = {
     project_title_13: "LFFプレミアムのクーポンバナー",
     project_description_13:
       "楽天市場LFFプレミアムのクーポンバナーを制作させていただきました。",
+    project_title_21: "LFFプレミアムのハンディファン特集バナー",
+    project_description_21:
+      "LFFプレミアムのハンディファン特集バナーを制作させていただきました。",
     project_title_14: "LFFプレミアムの商品紹介動画",
     project_description_14:
       "楽天市場LFFプレミアムの「FUWAFFLE」という商品の動画撮影・編集を担当させていただきました。",
@@ -154,6 +157,9 @@ const translations = {
     project_title_13: "LFF Premium Coupon Banner",
     project_description_13:
       "I created these coupon banners for Rakuten LFF Premium.",
+    project_title_21: "LFF Premium Handyfan Banner",
+    project_description_21:
+      "I created this Handyfan product banner for Rakuten LFF Premium.",
     project_title_14: "LFF Premium Product Introduction Video",
     project_description_14:
       "I was responsible for shooting and editing the product introduction video for Rakuten LFF Premium's 'FUWAFFLE'.",
